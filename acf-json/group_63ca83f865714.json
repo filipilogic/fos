@@ -1,0 +1,115 @@
+{
+    "key": "group_63ca83f865714",
+    "title": "Settings: General",
+    "fields": [
+        {
+            "key": "field_640f2fdb41550",
+            "label": "Primary Color",
+            "name": "primary_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#283565",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_640f307541551",
+            "label": "Secondary Color",
+            "name": "secondary_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#40CECF",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_640f308841552",
+            "label": "Third Color",
+            "name": "third_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#533ed3",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_640f309841553",
+            "label": "Text Color",
+            "name": "text_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#020510",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_63ca83f80527a",
+            "label": "Team behind this awesome Theme:",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "settings-logos",
+                "id": ""
+            },
+            "message": "<br>\r\n<img width=\"250\" src=\"\/wp-content\/themes\/ilogic\/assets\/public\/images\/zeljko-skipic-logo.svg\"> &ensp; and &ensp;<img width=\"250\" src=\"\/wp-content\/themes\/ilogic\/assets\/public\/images\/lemon-logo.png\">",
+            "new_lines": "br",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1678717095
+}

@@ -1,0 +1,204 @@
+/* Single */
+.single-post {
+    @include tab-max {
+        .il_blog_hero {
+            padding-bottom: calc(var(--b-space-3) + var(--b-space-3));
+        }
+
+    }
+}
+.il_blog_hero {
+    position: relative;
+    padding-bottom: var(--b-space-3);
+
+    .il_blog_featured {
+        @include tab-max {
+            margin-top: var(--b-space-3);
+        }
+    }
+    .il_blog_hero_title_wrap {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        @include tab-max {
+            background: linear-gradient(to left, #062366 0%, #010d28 100%);
+            border-bottom: 5px solid var(--color-2);
+        }
+    }
+    .il_blog_hero_svg {
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        top: 0;
+        @include tab-max {
+            display: none;
+        }
+    }
+}
+
+.post_container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding-top: var(--b-space-1);
+    .date {
+        background-color: #F3F3F3;
+        font-size: 16px;
+        @include tab-max {
+            font-size: 14px;
+        }
+        padding: 8px 13px;
+        color: #151515;
+        margin-bottom: 2rem;
+        display: inline-block;
+    }
+    p {
+        margin-bottom: 4.7rem;
+    }
+    h2, h3, h4, h5, h6 {
+        font-family: Montserrat;
+        text-transform: none;
+        font-weight: 600;
+        color: var(--color-1)
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+}
+.post-navigation {
+    padding-top: 7.8rem;
+    display: block;
+    padding-bottom: 14rem;
+}
+.nav-previous {
+    margin-right: 10px;
+    a {
+        background-image: url(../../icons/left-arrow.svg);
+    }
+}
+.nav-next a {
+    background-image: url(../../icons/right-arrow.svg);
+}
+.nav-previous, .nav-next {
+    display: flex;
+    a {
+        border-radius: 0;
+        opacity: 1;
+        transition: var(--theme-transition);
+        background-color: var(--color-1);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 4rem;
+        height: 4rem;
+        background-size: 50%;
+        display: block;
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
+
+/* Archive */
+
+.blog, .archive {
+    main {
+        padding-top: 0rem;
+    }
+    .il_blog_post {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14rem;
+        .il_bp_title {
+            margin-bottom: 2.5rem;
+        }
+        @include mob-only {
+            margin-bottom: var(--b-space-1);
+        }
+       @include limbo-min {
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .il_bp_left {
+            width: 49%;
+        }
+        .il_bp_right {
+            width: 45%;
+        }
+       }
+       @include tab-max {
+        flex-direction: column-reverse;
+        .il_bp_right {
+            margin-bottom: 6rem;
+        }
+       }
+        .il_bp_left {
+            display: flex;
+            flex-direction: column;
+            @include desk-min {
+                padding-top: 2vh;
+            }
+            .il_bp_title {
+                color: var(--color-1);
+                text-decoration: none;
+            }
+            .date {
+                background-color: #F3F3F3;
+                font-size: 16px;
+                @include tab-max {
+                    font-size: 14px;
+                }
+                padding: 8px 13px;
+                color: #151515;
+                margin-bottom: 2rem;
+                display: inline-block;
+                width: fit-content;
+            }
+            .il_bp_text {
+                color: var(--color-1);
+                font-size: 2rem;
+                @include mob-only {
+                    margin-top: 2rem;
+                }
+                margin-bottom: 2rem;
+                @include limbo-max {
+                    font-size: 16px;
+                }
+            }
+            .il_btn {
+               margin: 3.5rem auto 0 0;
+               padding: 0;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               color: var(--color-3);
+               transition: var(--theme-transition);
+               @include tab-max {
+                margin: 5rem auto 0 0;
+               }
+
+               &:hover {
+                .il_btn_icon {
+                    margin-left: 1rem;
+                }
+               }
+               .il_btn_icon {
+                transition: var(--theme-transition);
+                display: flex;
+               }
+                svg {
+                    height: 20px;
+                    path {
+                        fill: var(--color-3);
+                    }
+                }
+            }
+        }
+    }
+    .posts-navigation .nav-links {
+        a {
+            font-size: 0;
+        }
+    }
+}

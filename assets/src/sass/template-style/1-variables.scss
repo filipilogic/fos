@@ -1,0 +1,44 @@
+// File location: assets\src\sass\styles\template-style
+
+:root {
+
+  --title-size-1: 7rem;
+  --title-size-2: 5.8rem;
+  --title-size-3: 5rem;
+  --title-size-4: 3rem;
+  --title-size-5: 2.5rem;
+  --title-size-6: 2rem;
+
+  --title-line-height: 1.2;
+
+  --b-space-1: 10rem;
+  --b-space-2: 12.5rem;
+  --b-space-3: 15rem;
+
+  --theme-transition: .3s all;
+
+  @media (min-width: 797.6px) /* Insert the same width as limbo-min variable */ {
+    --site-width: 90%;
+    --body-size: 18px;
+  }
+
+  @media (max-width: 797.5px) /* Insert the same width as tab-max variable */ {
+    --site-width: calc(100% - 50px);
+    --body-size: 16px;
+  }
+  --site-max-width: 1600px;
+}
+
+// Breakpoint sizes - Associated with Breakpoints in Mixins.scss
+
+$mob-max: 479.5px;
+$tab-min: 479.6px;
+$tab-max: 797.5px;
+$limbo-min: 797.6px;
+$limbo-max: 1199.5px;
+$desk-min: 1199.6px;
+$sm-desk-max: 1360.5px;
+$md-desk-min: 1360.6px;
+$md-desk-max: 1659.5px;
+$lg-desk-min: 1659.6px;
+$huge-desk-min: 2560px;

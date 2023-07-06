@@ -1,0 +1,21 @@
+/* Buttons */
+
+.il_btn {
+    padding: .5rem 4rem;
+    text-decoration: none;
+    color: #fff;
+    display: inline-flex;
+    font-size: 2rem;
+    &:first-child {
+      background-color: var(--color-1);
+    }
+    &:nth-child(2) {
+      background-color: var(--color-2);
+    }
+    &:nth-child(3) {
+      background-color: var(--color-3);
+    }
+    &:not(:last-child), &:not(:only-child) {
+      margin-right: 1rem;
+    }
+  }

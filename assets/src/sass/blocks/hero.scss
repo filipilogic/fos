@@ -1,0 +1,41 @@
+.il_hero {
+  background-size: cover;
+  display: flex;
+  .il_hero_inner {
+    display: flex;
+    flex-direction: column;
+    div {
+      max-width: 1080px;
+      margin-bottom: 3rem;
+      display: block;
+      color: #fff;
+    }
+  }
+  .intro_title {
+    font-size: 12rem;
+    line-height: 1;
+    color: #fff;
+  }
+  .il_hero_subtitle {
+    font-size: 8rem;
+    color: #fff;
+  }
+  .il_btn {
+    padding: 1rem 4rem;
+    display: inline-flex;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3rem 0 3rem 3rem;
+    border: none;
+  }
+  &.full-screen {
+    min-height: calc(100vh - 16.5rem); // With top bar
+    /* min-height: calc(100vh - 10.5rem); */ // Without top bar
+    @include limbo-max {
+      min-height: calc(100vh - 13rem);
+    }
+    .hero_inner {
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.footer_main {
+    background-color: var(--color-1);
+    * {
+        color: #fff;
+    }
+}
+.footer_main_inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_bottom {
+    text-align: center;
+}

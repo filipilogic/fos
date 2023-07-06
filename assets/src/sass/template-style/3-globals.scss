@@ -1,0 +1,93 @@
+// File location: assets\src\sass\styles\template-style
+
+
+/* ACF Chrome bug Fix */
+
+.interface-interface-skeleton__content div.acf-field-tab, .acf-settings-wrap div.acf-field-tab {
+  display: block!important;
+  font-size: 0;
+  height: 0;
+  padding: 0!important;
+  opacity: 0;
+  pointer-events: none;
+  * {
+    pointer-events: none!important;
+  }
+}
+
+div {
+  &.block_space_1 {
+    padding-top: var(--b-space-1);
+    padding-bottom: var(--b-space-1);
+  }
+  &.block_space_2 {
+    padding-top: var(--b-space-2);
+    padding-bottom: var(--b-space-2);
+  }
+  &.block_space_3 {
+    padding-top: var(--b-space-3);
+    padding-bottom: var(--b-space-3);
+  }
+  &.block_space_1_2 {
+    padding-top: var(--b-space-1);
+    padding-bottom: var(--b-space-2);
+  }
+  &.block_space_1_3 {
+    padding-top: var(--b-space-1);
+    padding-bottom: var(--b-space-3);
+  }
+  &.block_space_3_1 {
+    padding-top: var(--b-space-3);
+    padding-bottom: var(--b-space-1);
+  }
+  &.block_space_2_3 {
+    padding-top: var(--b-space-2);
+    padding-bottom: var(--b-space-3);
+  }
+  &.block_space_3_2 {
+    padding-top: var(--b-space-3);
+    padding-bottom: var(--b-space-2);
+  }
+  &.margin-sm {
+    margin-bottom: 3rem;
+  }
+  &.margin-md {
+    margin-bottom: 5rem;
+  }
+  &.margin-lg {
+    margin-bottom: 7rem;
+  }
+  &.margin-xl {
+    margin-bottom: 10rem;
+  }
+}
+
+.il_block {
+  position: relative;
+  z-index: 2;
+}
+.il_block_bg {
+  z-index: -1;
+  @include ab-bg;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+  .mob_bg {
+    @include limbo-min {
+      display: none;
+    }
+  }
+}
+
+.intro_title {
+  margin-bottom: 2rem;
+}
+
+@include mob-only {
+  .il_hm { // Hides element on Mobile
+    display: none;
+  }
+}

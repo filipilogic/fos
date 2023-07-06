@@ -1,0 +1,78 @@
+html {
+  font-size: 10px;
+  @include md-desk-only {
+    font-size: 8px;
+  }
+  @include sm-desk-only {
+    font-size: 7px;
+  }
+  @include limbo-only {
+    font-size: 6px;
+  }
+  @include tab-only {
+    font-size: 6px;
+  }
+  @include mob-only {
+    font-size: 5px;
+  }
+  :where(.wp-block) {
+    max-width: 90%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    line-height: var(--title-line-height);
+  }
+}
+main {
+  max-width: 2560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-main, .interface-interface-skeleton__content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Font Primary',
+  }
+  div, p, a {
+      font-family: 'Font Secondary';
+  }
+  p, li {
+    margin-top: 0;
+    font-size: var(--body-size);
+  }
+  p, a {
+    font-size: 2rem;
+    @include limbo-max {
+      font-size: 16px;
+    }
+    @include mob-only {
+      font-size: 15px;
+    }
+ }
+h2 {
+  font-size: var(--title-size-2);
+}
+h3 {
+  font-size: var(--title-size-3);
+}
+h4 {
+  font-size: var(--title-size-4);
+}
+h5 {
+  font-size: var(--title-size-5);
+}
+h6 {
+  font-size: var(--title-size-6);
+}
+}
+.container {
+  width: var(--site-width);
+  max-width: var(--site-max-width);
+  margin: auto;
+}
