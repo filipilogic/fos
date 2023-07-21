@@ -39,7 +39,8 @@
                 "id": ""
             },
             "clone": [
-                "field_63494c82c44a1"
+                "field_64b2e187e2cd6",
+                "field_64b2ed3ce6b65"
             ],
             "display": "seamless",
             "layout": "block",
@@ -65,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673960003
+    "modified": 1689603380
 }

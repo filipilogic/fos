@@ -1,21 +1,20 @@
 /* Buttons */
 
 .il_btn {
-    padding: .5rem 4rem;
-    text-decoration: none;
-    color: #fff;
+    padding: 1.2rem 4rem;
     display: inline-flex;
-    font-size: 2rem;
-    &:first-child {
-      background-color: var(--color-1);
-    }
-    &:nth-child(2) {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3.6rem;
+    border: none;
+    transition: var(--theme-transition);
+    &.button-color-green, &.button-hover-color-green:hover {
       background-color: var(--color-2);
     }
-    &:nth-child(3) {
+    &.button-color-pink, &.button-hover-color-pink:hover {
       background-color: var(--color-3);
     }
     &:not(:last-child), &:not(:only-child) {
-      margin-right: 1rem;
+      margin-right: 3rem;
     }
   }

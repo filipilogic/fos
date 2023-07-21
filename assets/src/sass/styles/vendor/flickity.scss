@@ -135,3 +135,19 @@ https://flickity.metafizzy.co
   .flickity-page-dots .dot.is-selected {
     opacity: 1;
   }
+
+  .flickity-button {
+    background: transparent;
+    color: var(--color-1);
+    box-shadow: none;
+    &:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+  .flickity-prev-next-button.previous {
+      left: -5%;
+  }
+  .flickity-prev-next-button.next {
+      right: -5%;
+  }

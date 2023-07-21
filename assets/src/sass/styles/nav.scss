@@ -7,6 +7,11 @@
     stroke: var(--color-1);
   }
 }
+.header-main {
+  a {
+    font-family: 'Font Primary';
+  }
+}
 @include desk-min {
   .menu-toggle {
     display: none;
@@ -72,7 +77,6 @@
         max-width: 1600px;
         margin: auto;
         align-items: center;
-        padding: 1.5rem 0;
         #primary-menu {
           justify-content: flex-end;
           flex-wrap: wrap;
@@ -124,10 +128,9 @@
             }
           }
           a {
-            text-transform: uppercase;
             margin-right: 2rem;
             color: var(--color-text);
-            font-size: 16px;
+            font-size: 14px;
           }
         }
         .logo-wrap {

@@ -25,6 +25,32 @@
 			--color-2: <?php the_field('secondary_color', 'option'); ?>;
 			--color-3: <?php the_field('third_color', 'option'); ?>;
 			--color-text: <?php the_field('text_color', 'option'); ?>;
+			--title-size-1-ld: <?php the_field('title_size_1_ld', 'option'); ?>;
+			--title-size-2-ld: <?php the_field('title_size_2_ld', 'option'); ?>;
+			--title-size-3-ld: <?php the_field('title_size_3_ld', 'option'); ?>;
+			--title-size-4-ld: <?php the_field('title_size_4_ld', 'option'); ?>;
+			--title-size-5-ld: <?php the_field('title_size_5_ld', 'option'); ?>;
+			--title-size-1-mt: <?php the_field('title_size_1_mt', 'option'); ?>;
+			--title-size-2-mt: <?php the_field('title_size_2_mt', 'option'); ?>;
+			--title-size-3-mt: <?php the_field('title_size_3_mt', 'option'); ?>;
+			--title-size-4-mt: <?php the_field('title_size_4_mt', 'option'); ?>;
+			--title-size-5-mt: <?php the_field('title_size_5_mt', 'option'); ?>;
+			--subtitle-size-1-ld: <?php the_field('subtitle_size_1_ld', 'option'); ?>;
+			--subtitle-size-2-ld: <?php the_field('subtitle_size_2_ld', 'option'); ?>;
+			--subtitle-size-3-ld: <?php the_field('subtitle_size_3_ld', 'option'); ?>;
+			--subtitle-size-1-mt: <?php the_field('subtitle_size_1_mt', 'option'); ?>;
+			--subtitle-size-2-mt: <?php the_field('subtitle_size_2_mt', 'option'); ?>;
+			--subtitle-size-3-mt: <?php the_field('subtitle_size_3_mt', 'option'); ?>;
+			--b-space-1-ld: <?php the_field('padding-xs-ld', 'option'); ?>;
+			--b-space-2-ld: <?php the_field('padding-s-ld', 'option'); ?>;
+			--b-space-3-ld: <?php the_field('padding-m-ld', 'option'); ?>;
+			--b-space-4-ld: <?php the_field('padding-l-ld', 'option'); ?>;
+			--b-space-5-ld: <?php the_field('padding-xl-ld', 'option'); ?>;
+			--b-space-1-mt: <?php the_field('padding-xs-mt', 'option'); ?>;
+			--b-space-2-mt: <?php the_field('padding-s-mt', 'option'); ?>;
+			--b-space-3-mt: <?php the_field('padding-m-mt', 'option'); ?>;
+			--b-space-4-mt: <?php the_field('padding-l-mt', 'option'); ?>;
+			--b-space-5-mt: <?php the_field('padding-xl-mt', 'option'); ?>;
 		}
 	</style>
 </head>

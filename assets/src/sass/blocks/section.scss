@@ -1,68 +1,130 @@
-.il_section.style-1 {
-  padding: 10rem 0;
-  .il_section_title {
-    font-size: 6rem;
-    font-weight: 500;
-    color: var(--color-1);
-    margin-bottom: 2rem;
+.il_section {
+  padding-top: var(--b-space-top-ld);
+  padding-bottom: var(--b-space-bottom-ld);
+  padding-left: var(--b-space-left-ld);
+  padding-right: var(--b-space-right-ld);
+  @include tab-max {
+    padding-top: var(--b-space-top-mt);
+    padding-bottom: var(--b-space-bottom-mt);
+    padding-left: var(--b-space-left-mt);
+    padding-right: var(--b-space-right-mt);
   }
-  .il_section_text {
-    color: var(--color-text);
-    margin-bottom: 3rem;
+  &.info-box-width-55 {
+    @include desk-min {
+      .il_block_intro {
+        flex: 53% 0 0;
+      }
+      .right {
+        flex: 43% 0 0;
+      }
+    }
   }
-  .il_btn {
-    padding: 1rem 2rem;
-    display: inline-flex;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3rem;
-    border: none;
-  }
-}
-
-.il_section.style-2 {
-  padding: 10rem 0;
-  background-color: var(--color-1);
-  .left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5rem 0
-  }
-  .il_section_title {
-    font-size: 7.3rem;
-    font-weight: 500;
-    color: var(--color-3);
-    margin-bottom: 2rem;
-  }
-  .il_section_text {
-    color: #fff;
-    margin-bottom: 3rem;
-  }
-  .il_btn {
-    padding: 10px 40px;
-    display: inline-flex;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3rem 0 3rem 3rem;
-    border: none;
+  &.info-box-width-50 {
+    @include desk-min {
+      .il_block_intro {
+        flex: 48% 0 0;
+      }
+      .right {
+        flex: 48% 0 0;
+      }
+    }
   }
 }
-
 
 .il_section_inner {
+  padding-top: var(--b-inner-sec-space-top-ld);
+  padding-bottom: var(--b-inner-sec-space-bottom-ld);
+  padding-left: var(--b-inner-sec-space-left-ld);
+  padding-right: var(--b-inner-sec-space-right-ld);
+  @include tab-max {
+    padding-top: var(--b-inner-sec-space-top-mt);
+    padding-bottom: var(--b-inner-sec-space-bottom-mt);
+    padding-left: var(--b-inner-sec-space-left-mt);
+    padding-right: var(--b-inner-sec-space-right-mt);
+  }
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
+  .il_block_bg {
+    z-index: -1;
+    @include ab-bg;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+    .desk_bg {
+      z-index: -1;
+      @include tab-max {
+        &.hide_desk_bg_mob {
+          display: none;
+        }
+      }
+    }
+    .mob_bg {
+      z-index: -1;
+      @include limbo-min {
+        display: none;
+      }
+    }
+    .bg_element {
+      position: absolute;
+      z-index: -1;
+      width: var(--bg-e-width-lg);
+      height: var(--bg-e-height-lg);
+      left: var(--bg-e-left-lg);
+      right: var(--bg-e-right-lg);
+      top: var(--bg-e-top-lg);
+      bottom: var(--bg-e-bottom-lg);
+      @include tab-max {
+        width: var(--bg-e-width-mt);
+        height: var(--bg-e-height-mt);
+        left: var(--bg-e-left-mt);
+        right: var(--bg-e-right-mt);
+        top: var(--bg-e-top-mt);
+        bottom: var(--bg-e-bottom-mt);
+        display: var(--bg-e-display-mobile);
+      }
+    }
+  }
   > div {
     flex: 48% 0 0;
+    position: relative;
+  }
+  &.ib-fullwidth {
+    > div {
+      flex-basis: 100%;
+    }
+    &.il_section_inner {
+      justify-content: center;
+    }
+  }
+  &.ib-custom-width {
+    @include limbo-max {
+      > div {
+        flex-basis: 100% !important;
+      }
+    }
+    @include desk-min {
+      &.content-align-left {
+        justify-content: flex-start;
+      }
+      &.content-align-center {
+        justify-content: center;
+      }
+      &.content-align-right {
+        justify-content: flex-end;
+      }
+    }
   }
   @include limbo-max {
     &.stack-tablet-reverse {
       > div {
         flex-basis: 100%;
       }
-      .left {
+      .il_block_intro {
         order: 2;
       }
       .right {
@@ -75,7 +137,7 @@
       > div {
         flex-basis: 100%;
       }
-      .left {
+      .il_block_intro {
         order: 2;
       }
       .right {
@@ -84,7 +146,7 @@
     }
   }
   &.ib-right {
-    .left {
+    .il_block_intro {
       order: 2;
     }
     .right {
@@ -95,11 +157,12 @@
         > div {
           flex-basis: 100%;
         }
-        .left {
+        .il_block_intro {
           order: 1;
         }
         .right {
           order: 2;
+          margin-top: 10px;
         }
       }
     }
@@ -108,11 +171,12 @@
         > div {
           flex-basis: 100%;
         }
-        .left {
+        .il_block_intro {
           order: 1;
         }
         .right {
           order: 2;
+          margin-top: 10px;
         }
       }
     }
@@ -122,12 +186,18 @@
       > div {
         flex-basis: 100%;
       }
+      .right {
+        margin-bottom: 20px;
+      }
     }
   }
   &.stack-tablet {
     @include limbo-max {
       > div {
         flex-basis: 100%;
+      }
+      .right {
+        margin-bottom: 20px;
       }
     }
   }

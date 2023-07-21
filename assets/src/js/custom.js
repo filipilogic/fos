@@ -15,33 +15,4 @@ jQuery(document).ready(function ($) {
 		$( this ).siblings(".sub-menu").slideToggle();
 	});
 
-
-
-    // Technologies
-/*
-    $(".tg_trigger-1").click(function () {
-        $(".tg_trigger-1").toggleClass('si_open');
-        $(".tg_trigger.si_open:not(.tg_trigger-1)").removeClass('si_open');
-        $(".tg_modal-1").slideToggle().toggleClass('si_open');
-        $(".tg_modal.si_open:not(.tg_modal-1)").slideToggle().removeClass('si_open');
-    });
-
-    $(".tg_trigger-2").click(function () {
-        $(".tg_trigger-2").toggleClass('si_open');
-        $(".tg_trigger.si_open:not(.tg_trigger-2)").removeClass('si_open');
-        $(".tg_modal-2").slideToggle().toggleClass('si_open');
-        $(".tg_modal.si_open:not(.tg_modal-2)").slideToggle().removeClass('si_open');
-    });
-
-    $(".tg_trigger-3").click(function () {
-        $(".tg_trigger-3").toggleClass('si_open');
-        $(".tg_trigger.si_open:not(.tg_trigger-3)").removeClass('si_open');
-        $(".tg_modal-3").slideToggle().toggleClass('si_open');
-        $(".tg_modal.si_open:not(.tg_modal-3)").slideToggle().removeClass('si_open');
-    }); */
-
-
-
-
-
 });

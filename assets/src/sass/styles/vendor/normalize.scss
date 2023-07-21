@@ -409,10 +409,13 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: var(--color-text);
+  font-family: 'Font Primary';
   font-size: 1.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
+  @include tab-max {
+    line-height: 20px;
+  }
 }
 
 h1,
@@ -425,7 +428,10 @@ h6 {
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.4rem;
+  @include tab-max {
+    margin-bottom: 20px;
+  }
 }
 
 dfn,
@@ -436,7 +442,9 @@ i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  border-left: 9px solid #E6317D;
+  margin: 0;
+  padding-left: 1em;
 }
 
 address {
@@ -489,14 +497,6 @@ hr {
   margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-  margin: 0 0 1.5em 3em;
-  @include tab-max {
-    margin-left: 0;
-  }
-}
-
 ul {
   list-style: disc;
 }
@@ -543,7 +543,7 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1;
+  color: #fff;
 }
 
 /* a:visited {

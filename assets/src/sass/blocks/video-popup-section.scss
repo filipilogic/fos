@@ -1,0 +1,48 @@
+.il_video-popup-section {
+  .buttons-after-videos {
+    margin-top: 3.6rem;
+    text-align: center;
+    @include tab-max {
+      margin-top: 36px;
+    }
+  }
+  .il_section_inner.ib-left, .il_section_inner.ib_right {
+    align-items: center;
+  }
+  @include tab-max {
+    .right {
+      .column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          width: 85%;
+        }
+      }
+      // enable flickity
+      &:after {
+          content: 'flickity';
+          display: none;
+      }
+    }
+  }
+  @include limbo-min {
+    .right {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .column {
+        width: 48%;
+        text-align: center;
+      }
+      .column:only-child {
+        width: 100%;
+      }
+    }
+  }
+  &.has-blue-gradient {
+      .flickity-button {
+          color: #fff;
+      }
+}
+}

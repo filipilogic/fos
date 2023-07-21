@@ -75,7 +75,7 @@
   }
 
   @mixin md-desk-max {
-    @media (min-width: $md-desk-max) {
+    @media (max-width: $md-desk-max) {
       @content;
     }
   }

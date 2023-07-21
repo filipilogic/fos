@@ -96,11 +96,10 @@
                     },
                     "layout": "row",
                     "min": 0,
-                    "max": 4,
+                    "max": 0,
                     "collapsed": "",
                     "button_label": "Add Member",
                     "rows_per_page": 20,
-                    "parent_repeater": "field_63a4248b78022",
                     "sub_fields": [
                         {
                             "key": "field_634fd3d718d4c",
@@ -190,8 +189,30 @@
                             "media_upload": 0,
                             "toolbar": "full",
                             "parent_repeater": "field_634fd34b18d48"
+                        },
+                        {
+                            "key": "field_64b6b26deeac4",
+                            "label": "Show Learn More",
+                            "name": "show_learn_more",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1,
+                            "parent_repeater": "field_634fd34b18d48"
                         }
-                    ]
+                    ],
+                    "parent_repeater": "field_63a4248b78022"
                 }
             ]
         },
@@ -275,5 +296,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673868018
+    "modified": 1689722873
 }

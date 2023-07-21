@@ -32,11 +32,14 @@ if ( have_rows('accordion') ) :
 
 		$accordion_title = get_sub_field('title');
 		$accordion_content = get_sub_field('content');
+		$image_desktop = get_sub_field('image_desktop');
+		$image_mobile = get_sub_field('image_mobile');
+		$size = 'full';
 
 		if($item == 1 && get_field('first_open') ){
 
 			$open = 'open';
-			$display = 'display: block';
+			$display = 'display: flex';
 
 			}else{
 				$open = '';
@@ -48,7 +51,24 @@ if ( have_rows('accordion') ) :
 					<?php echo $accordion_title; ?>
 				</h3>
 				<div class="il_accordion-body" style="<?php echo $display ?>">
+					<div class="il_accordion-body-left">
 					<?php echo $accordion_content; ?>
+					</div>
+					<?php
+						if ($image_desktop || $image_mobile) { ?>
+							<div class="il_accordion-body-right">
+						<?php }
+							if( $image_desktop ) {
+								echo wp_get_attachment_image( $image_desktop, $size, "",array( 'class' => 'acc_desk_img' ) );
+							}
+							if( $image_mobile ) {
+								echo wp_get_attachment_image( $image_mobile, $size, "",array( 'class' => 'acc_mob_img' ) );
+							}
+						?>
+						<?php 
+						if ($image_desktop || $image_mobile) { ?>
+							</div>
+						<?php } ?>
 				</div>
 			</div>
 

@@ -1,33 +1,24 @@
 .il_hero {
+  padding-top: var(--b-hero-space-top-ld);
+  padding-bottom: var(--b-hero-space-bottom-ld);
+  padding-left: var(--b-hero-space-left-ld);
+  padding-right: var(--b-hero-space-right-ld);
+  @include tab-max {
+    padding-top: var(--b-hero-space-top-mt);
+    padding-bottom: var(--b-hero-space-bottom-mt);
+    padding-left: var(--b-hero-space-left-mt);
+    padding-right: var(--b-hero-space-right-mt);
+  }
   background-size: cover;
   display: flex;
   .il_hero_inner {
     display: flex;
-    flex-direction: column;
-    div {
-      max-width: 1080px;
-      margin-bottom: 3rem;
-      display: block;
-      color: #fff;
+    flex-wrap: wrap;
+    > div {
+      position: relative;
     }
   }
-  .intro_title {
-    font-size: 12rem;
-    line-height: 1;
-    color: #fff;
-  }
-  .il_hero_subtitle {
-    font-size: 8rem;
-    color: #fff;
-  }
-  .il_btn {
-    padding: 1rem 4rem;
-    display: inline-flex;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3rem 0 3rem 3rem;
-    border: none;
-  }
+  // make full height toggle in the future
   &.full-screen {
     min-height: calc(100vh - 16.5rem); // With top bar
     /* min-height: calc(100vh - 10.5rem); */ // Without top bar

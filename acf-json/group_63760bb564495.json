@@ -6,6 +6,7 @@
             "key": "field_6376148554186",
             "label": "Intro",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,7 @@
             "key": "field_637615ef54187",
             "label": "Intro",
             "name": "columns_intro",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -43,6 +45,7 @@
             "key": "field_6376173435164",
             "label": "Content",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -59,6 +62,7 @@
             "key": "field_63760bb52814b",
             "label": "Columns",
             "name": "columns_block",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -80,6 +84,7 @@
                     "key": "field_63760cb08aafd",
                     "label": "Image",
                     "name": "image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -105,6 +110,7 @@
                     "key": "field_63760d518aaff",
                     "label": "Title",
                     "name": "title",
+                    "aria-label": "",
                     "type": "clone",
                     "instructions": "",
                     "required": 0,
@@ -127,6 +133,7 @@
                     "key": "field_63761797017fa",
                     "label": "Text",
                     "name": "text",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -147,6 +154,7 @@
                     "key": "field_63761779017f9",
                     "label": "Buttons",
                     "name": "buttons",
+                    "aria-label": "",
                     "type": "clone",
                     "instructions": "",
                     "required": 0,
@@ -171,6 +179,7 @@
             "key": "field_637616c154188",
             "label": "Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -187,6 +196,7 @@
             "key": "field_637616cf54189",
             "label": "Background",
             "name": "background",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -208,6 +218,7 @@
             "key": "field_63762da5cb5a9",
             "label": "Columns",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -225,6 +236,7 @@
             "key": "field_63762db8cb5aa",
             "label": "Columns",
             "name": "columns_columns",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -246,6 +258,7 @@
             "key": "field_637616f65418a",
             "label": "Spacing",
             "name": "spacing",
+            "aria-label": "",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -262,6 +275,105 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
+        },
+        {
+            "key": "field_64afc02cdfb8d",
+            "label": "Inner Column Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64afbf3a57939",
+            "label": "Column Alignment",
+            "name": "column_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "align-left": "Left",
+                "align-center": "Center",
+                "align-right": "Right"
+            },
+            "default_value": "align-left",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_64afbf555793a",
+            "label": "Text Color",
+            "name": "text_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-theme-color": "Theme Color",
+                "text-white": "White",
+                "text-blue": "Blue"
+            },
+            "default_value": "text-theme-color",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_64afda28cbced",
+            "label": "Text Font Weight",
+            "name": "text_font_weight",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-400": "Regular",
+                "text-600": "Semi Bold",
+                "text-700": "Bold"
+            },
+            "default_value": "text-400",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -282,5 +394,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1668689568
+    "modified": 1689246402
 }

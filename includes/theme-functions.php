@@ -310,6 +310,15 @@ function theme_widgets_init() {
 		'before_title'  => '<h2 class="widgettitle">',
 		'after_title'   => '</h2>',
 	) );
+    register_sidebar( array(
+		'name'          => __( 'Blog Sidebar', 'ilogic' ),
+		'id'            => 'blog-sidebar',
+		'description'   => __( 'Blog Sidebar', 'ilogic' ),
+		'before_widget' => '<div class="blog_sidebar">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'theme_widgets_init' );
 

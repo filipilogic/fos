@@ -41,8 +41,13 @@ if ( ! empty( $padding) ) {
 <div <?php echo $anchor; ?> class="<?php echo $class ?>">
 <?php get_template_part('components/background'); ?>
 	<div class="container">
-		<?php get_template_part('components/intro'); ?>
-        <div class="il_columns_inner">
+		<?php get_template_part('components/intro');
+        $column_alignment = get_field('column_alignment');
+        $text_color = get_field('text_color');
+        $text_font_weight = get_field('text_font_weight');
+        $inner_class = $column_alignment . ' ' . $text_color . ' ' . $text_font_weight;
+        ?>
+        <div class="il_columns_inner <?php echo $inner_class; ?>">
         <?php
             // Columns repeater
             if( have_rows('columns_block') ):

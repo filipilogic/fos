@@ -13,7 +13,7 @@ $class = 'footer_main_inner container';
 $cols = get_field_object('columns', 'option');
 $tab_cols = get_field_object('tab_columns', 'option');
 $mob_cols = get_field_object('mob_columns', 'option');
-$padding = get_field_object('padding', 'option');
+$padding = get_field_object('footer_padding', 'option');
 
 if ( ! empty( $cols ) ) {
     $class .=  ' ' . $cols['value'];
@@ -24,14 +24,44 @@ if ( ! empty( $tab_cols ) ) {
 if ( ! empty( $mob_cols ) ) {
     $class .=  ' ' . $mob_cols['value'];
 }
-if ( ! empty( $padding) ) {
-    $class .=  ' ' . $padding['value'];
+if ( ! empty( $padding ) ) {
+	$paddings = '';
+
+	if ( ! empty( $padding['value']['custom_padding_ld']  )) {
+		if( ! empty($padding['value']['custom_padding_ld']['padding_top']) ) {
+			$paddings .= ' --b-footer-space-top-ld: ' . $padding['value']['custom_padding_ld']['padding_top'] . ';';
+		}
+		if( ! empty($padding['value']['custom_padding_ld']['padding_bottom']) ) {
+			$paddings .= ' --b-footer-space-bottom-ld: ' . $padding['value']['custom_padding_ld']['padding_bottom'] . ';';
+		}
+		if( ! empty($padding['value']['custom_padding_ld']['padding_left']) ) {
+			$paddings .= ' --b-footer-space-left-ld: ' . $padding['value']['custom_padding_ld']['padding_left'] . ';';
+		}
+		if( ! empty($padding['value']['custom_padding_ld']['padding_right']) ) {
+			$paddings .= ' --b-footer-space-right-ld: ' . $padding['value']['custom_padding_ld']['padding_right'] . ';';
+		}
+	}
+
+	if ( ! empty( $padding['value']['custom_padding_mt']  )) {
+		if( ! empty($padding['value']['custom_padding_mt']['padding_top']) ) {
+			$paddings .= ' --b-footer-space-top-mt: ' . $padding['value']['custom_padding_mt']['padding_top'] . ';';
+		}
+		if( ! empty($padding['value']['custom_padding_mt']['padding_bottom']) ) {
+			$paddings .= ' --b-footer-space-bottom-mt: ' . $padding['value']['custom_padding_mt']['padding_bottom'] . ';';
+		}
+		if( ! empty($padding['value']['custom_padding_mt']['padding_left']) ) {
+			$paddings .= ' --b-footer-space-left-mt: ' . $padding['value']['custom_padding_mt']['padding_left'] . ';';
+		}
+		if( ! empty($padding['value']['custom_padding_mt']['padding_right']) ) {
+			$paddings .= ' --b-footer-space-right-mt: ' . $padding['value']['custom_padding_mt']['padding_right'] . ';';
+		}
+	}
 }
 
 ?>
 
 	<footer id="footer" class="site_footer">
-		<div class="footer_main">
+		<div class="footer_main" <?php if ( ! empty( $padding ) ) echo 'style="' . $paddings . '"'; ?>>
 		<div class="<?php echo $class; ?>">
 			<?php if ( is_active_sidebar( 'footer-1' ) ) { ?>
 				<div class="footer_col_1 column">
