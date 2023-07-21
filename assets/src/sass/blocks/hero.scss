@@ -17,6 +17,22 @@
     > div {
       position: relative;
     }
+    @include limbo-max {
+      > div {
+        flex-basis: 100% !important;
+      }
+    }
+    @include desk-min {
+      &.content-align-left {
+        justify-content: flex-start;
+      }
+      &.content-align-center {
+        justify-content: center;
+      }
+      &.content-align-right {
+        justify-content: flex-end;
+      }
+    }
   }
   // make full height toggle in the future
   &.full-screen {

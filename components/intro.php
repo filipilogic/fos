@@ -9,14 +9,14 @@ $list_columns = get_field_object('list_columns');
 
 $content_custom_width = get_field('content_custom_width');
 
-$class = 'il_block_intro';
+$intro_class = 'il_block_intro';
 $intro_in_style = 'style="';
 
 if ( ! empty( $alignment) ) {
-	$class .=  ' ' . $alignment['value'];
+	$intro_class .=  ' ' . $alignment['value'];
 }
 if ( ! empty( $list_columns) ) {
-	$class .=  ' ' . $list_columns['value'];
+	$intro_class .=  ' ' . $list_columns['value'];
 }
 if ( ! empty( $content_custom_width ) ) {
 	$intro_in_style .= 'flex-basis: ' . $content_custom_width . '%;';
@@ -28,67 +28,67 @@ if ( ! empty( $content_custom_width ) ) {
 <?php if ( have_rows('intro_spacing_group')) {
 	while (have_rows('intro_spacing_group')) {
 		the_row();
-		$custom_padding = get_sub_field('custom_padding');
-		$padding = get_sub_field_object('padding');
-		$paddings = '';
+		$intro_custom_padding = get_sub_field('custom_padding');
+		$intro_padding = get_sub_field_object('padding');
+		$intro_paddings = '';
 		
-		if( $custom_padding ) {
+		if( $intro_custom_padding ) {
 		
 			if ( have_rows('custom_padding_ld')) {
 				while (have_rows('custom_padding_ld')) {
 					the_row();
-					$padding_top = get_sub_field('padding_top');
-					$padding_bottom = get_sub_field('padding_bottom');
-					$padding_left = get_sub_field('padding_left');
-					$padding_right = get_sub_field('padding_right');
+					$intro_padding_top = get_sub_field('padding_top');
+					$intro_padding_bottom = get_sub_field('padding_bottom');
+					$intro_padding_left = get_sub_field('padding_left');
+					$intro_padding_right = get_sub_field('padding_right');
 		
-					if( ! empty($padding_top) ) {
-						$paddings .= ' --b-intro-space-top-ld: ' . $padding_top . ';';
+					if( ! empty($intro_padding_top) ) {
+						$intro_paddings .= ' --b-intro-space-top-ld: ' . $intro_padding_top . ';';
 					}
-					if( ! empty($padding_bottom) ) {
-						$paddings .= ' --b-intro-space-bottom-ld: ' . $padding_bottom . ';';
+					if( ! empty($intro_padding_bottom) ) {
+						$intro_paddings .= ' --b-intro-space-bottom-ld: ' . $intro_padding_bottom . ';';
 					}
-					if( ! empty($padding_left) ) {
-						$paddings .= ' --b-intro-space-left-ld: ' . $padding_left . ';';
+					if( ! empty($intro_padding_left) ) {
+						$intro_paddings .= ' --b-intro-space-left-ld: ' . $intro_padding_left . ';';
 					}
-					if( ! empty($padding_right) ) {
-						$paddings .= ' --b-intro-space-right-ld: ' . $padding_right . ';';
+					if( ! empty($intro_padding_right) ) {
+						$intro_paddings .= ' --b-intro-space-right-ld: ' . $intro_padding_right . ';';
 					}
 				}
 			}
 			if ( have_rows('custom_padding_mt')) {
 				while (have_rows('custom_padding_mt')) {
 					the_row();
-					$padding_top = get_sub_field('padding_top');
-					$padding_bottom = get_sub_field('padding_bottom');
-					$padding_left = get_sub_field('padding_left');
-					$padding_right = get_sub_field('padding_right');
+					$intro_padding_top = get_sub_field('padding_top');
+					$intro_padding_bottom = get_sub_field('padding_bottom');
+					$intro_padding_left = get_sub_field('padding_left');
+					$intro_padding_right = get_sub_field('padding_right');
 		
-					if( ! empty($padding_top) ) {
-						$paddings .= ' --b-intro-space-top-mt: ' . $padding_top . ';';
+					if( ! empty($intro_padding_top) ) {
+						$intro_paddings .= ' --b-intro-space-top-mt: ' . $intro_padding_top . ';';
 					}
-					if( ! empty($padding_bottom) ) {
-						$paddings .= ' --b-intro-space-bottom-mt: ' . $padding_bottom . ';';
+					if( ! empty($intro_padding_bottom) ) {
+						$intro_paddings .= ' --b-intro-space-bottom-mt: ' . $intro_padding_bottom . ';';
 					}
-					if( ! empty($padding_left) ) {
-						$paddings .= ' --b-intro-space-left-mt: ' . $padding_left . ';';
+					if( ! empty($intro_padding_left) ) {
+						$intro_paddings .= ' --b-intro-space-left-mt: ' . $intro_padding_left . ';';
 					}
-					if( ! empty($padding_right) ) {
-						$paddings .= ' --b-intro-space-right-mt: ' . $padding_right . ';';
+					if( ! empty($intro_padding_right) ) {
+						$intro_paddings .= ' --b-intro-space-right-mt: ' . $intro_padding_right . ';';
 					}
 				}
 			}
 		}
 	}
-	$intro_in_style .= $paddings;
+	$intro_in_style .= $intro_paddings;
 	
-	if ( ! empty( $padding) ) {
-		$class .=  ' ' . $padding['value'];
+	if ( ! empty( $intro_padding) ) {
+		$intro_class .=  ' ' . $intro_padding['value'];
 	}
 }
 ?>
 
-<div class="<?php echo $class; ?>" <?php if ( ! empty( $content_custom_width ) || ! empty(get_field('intro_spacing_group'))) { echo $intro_in_style . '"'; } ?>>
+<div class="<?php echo $intro_class; ?>" <?php if ( ! empty( $content_custom_width ) || ! empty(get_field('intro_spacing_group')) ) { echo $intro_in_style . '"'; } ?>>
 
 <!-- Intro Background -->
 <?php if ( have_rows('intro_background_group')) {

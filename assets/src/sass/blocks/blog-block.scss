@@ -41,6 +41,11 @@
                 display: block;
                 img{
                     width:100%;
+                    height: 25rem;
+                    object-fit: cover;
+                    @include tab-max {
+                        height: 35rem;
+                    }
                 }
                 .entry-title{
                     color: var(--color-1);

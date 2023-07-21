@@ -96,69 +96,70 @@ if ( ! empty( $content_align ) ) {
 <?php if ( have_rows('inner_section_spacing_group')) {
 	while (have_rows('inner_section_spacing_group')) {
 		the_row();
-		$custom_padding = get_sub_field('custom_padding');
-		$padding = get_sub_field_object('padding');
-		$paddings = '';
+		$inner_sec_custom_padding = get_sub_field('custom_padding');
+		$inner_sec_padding = get_sub_field_object('padding');
+		$inner_sec_paddings = '';
 		
-		if( $custom_padding ) {
+		if( $inner_sec_custom_padding ) {
 		
 			if ( have_rows('custom_padding_ld')) {
 				while (have_rows('custom_padding_ld')) {
 					the_row();
-					$padding_top = get_sub_field('padding_top');
-					$padding_bottom = get_sub_field('padding_bottom');
-					$padding_left = get_sub_field('padding_left');
-					$padding_right = get_sub_field('padding_right');
+					$inner_sec_padding_top = get_sub_field('padding_top');
+					$inner_sec_padding_bottom = get_sub_field('padding_bottom');
+					$inner_sec_padding_left = get_sub_field('padding_left');
+					$inner_sec_padding_right = get_sub_field('padding_right');
 		
 					if( ! empty($padding_top) ) {
-						$paddings .= ' --b-inner-sec-space-top-ld: ' . $padding_top . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-top-ld: ' . $inner_sec_padding_top . ';';
 					}
 					if( ! empty($padding_bottom) ) {
-						$paddings .= ' --b-inner-sec-space-bottom-ld: ' . $padding_bottom . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-bottom-ld: ' . $inner_sec_padding_bottom . ';';
 					}
 					if( ! empty($padding_left) ) {
-						$paddings .= ' --b-inner-sec-space-left-ld: ' . $padding_left . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-left-ld: ' . $inner_sec_padding_left . ';';
 					}
 					if( ! empty($padding_right) ) {
-						$paddings .= ' --b-inner-sec-space-right-ld: ' . $padding_right . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-right-ld: ' . $inner_sec_padding_right . ';';
 					}
 				}
 			}
 			if ( have_rows('custom_padding_mt')) {
 				while (have_rows('custom_padding_mt')) {
 					the_row();
-					$padding_top = get_sub_field('padding_top');
-					$padding_bottom = get_sub_field('padding_bottom');
-					$padding_left = get_sub_field('padding_left');
-					$padding_right = get_sub_field('padding_right');
+					$inner_sec_padding_top = get_sub_field('padding_top');
+					$inner_sec_padding_bottom = get_sub_field('padding_bottom');
+					$inner_sec_padding_left = get_sub_field('padding_left');
+					$inner_sec_padding_right = get_sub_field('padding_right');
 		
 					if( ! empty($padding_top) ) {
-						$paddings .= ' --b-inner-sec-space-top-mt: ' . $padding_top . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-top-mt: ' . $inner_sec_padding_top . ';';
 					}
 					if( ! empty($padding_bottom) ) {
-						$paddings .= ' --b-inner-sec-space-bottom-mt: ' . $padding_bottom . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-bottom-mt: ' . $inner_sec_padding_bottom . ';';
 					}
 					if( ! empty($padding_left) ) {
-						$paddings .= ' --b-inner-sec-space-left-mt: ' . $padding_left . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-left-mt: ' . $inner_sec_padding_left . ';';
 					}
 					if( ! empty($padding_right) ) {
-						$paddings .= ' --b-inner-sec-space-right-mt: ' . $padding_right . ';';
+						$inner_sec_paddings .= ' --b-inner-sec-space-right-mt: ' . $inner_sec_padding_right . ';';
 					}
 				}
 			}
 		}
 	}
-	$sec_in_style .= $paddings;
+	$sec_in_style .= $inner_sec_paddings;
 	
-	if ( ! empty( $padding) ) {
-		$sec_in_class .=  ' ' . $padding['value'];
+	if ( ! empty( $inner_sec_padding) ) {
+		$sec_in_class .=  ' ' . $inner_sec_padding['value'];
 	}
 }
+
 ?>
 
 <div class="<?php echo $class; ?>" <?php if ( $custom_padding ) echo 'style="' . $paddings . '"'; ?>>
 <?php get_template_part('components/background'); ?>
-<div class="<?php echo $sec_in_class ?>" <?php if ( ! empty( $content_custom_width ) || ! empty(get_field('inner_section_spacing_group'))) { echo $sec_in_style . '"'; } ?>>
+<div class="<?php echo $sec_in_class ?>" <?php if ( ! empty(get_field('inner_section_spacing_group')) ) { echo $sec_in_style . '"'; } ?>>
 <!-- Inner Section Background -->
 <?php if ( have_rows('inner_section_background_group')) {
 	while (have_rows('inner_section_background_group')) {
