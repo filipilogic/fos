@@ -72,7 +72,10 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "4": "News",
+                "1": "Uncategorized"
+            },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
@@ -80,6 +83,46 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_64bb14482ac97",
+            "label": "Buttons After Blog",
+            "name": "buttons_after_blog_group",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_64bb14ac2ac98",
+                    "label": "Buttons",
+                    "name": "buttons_after_blog",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_63499d76f1b93"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
         },
         {
             "key": "field_64b92156cb903",
@@ -218,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689977772
+    "modified": 1689982357
 }

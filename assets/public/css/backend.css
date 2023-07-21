@@ -863,6 +863,16 @@ div.margin-xl {
     flex-direction: column;
   }
 }
+.il_blog-block-section .il_past_events_section_posts .buttons-after-blog {
+  margin-top: 3.6rem;
+  text-align: center;
+}
+@media (max-width: 797.5px) {
+  .il_blog-block-section .il_past_events_section_posts .buttons-after-blog {
+    margin-top: 36px;
+    width: 100%;
+  }
+}
 .il_blog-block-section .il_past_events_section_posts article {
   width: 31%;
   background: #FFFFFF;
@@ -884,12 +894,12 @@ div.margin-xl {
   }
 }
 @media (max-width: 797.5px) {
-  .il_blog-block-section .il_past_events_section_posts article {
+  .il_blog-block-section .il_past_events_section_posts article:not(:last-of-type) {
     margin-bottom: 5rem;
   }
 }
 @media (min-width: 797.6px) {
-  .il_blog-block-section .il_past_events_section_posts article:not(:last-child) {
+  .il_blog-block-section .il_past_events_section_posts article:not(:last-of-type) {
     margin-right: 3%;
   }
 }

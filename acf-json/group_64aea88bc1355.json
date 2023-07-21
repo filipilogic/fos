@@ -128,7 +128,7 @@
         },
         {
             "key": "field_64af3c3c2d96a",
-            "label": "Buttons After Videos Group",
+            "label": "Buttons After Videos",
             "name": "buttons_after_videos_group",
             "aria-label": "",
             "type": "group",
@@ -822,5 +822,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689968380
+    "modified": 1689982092
 }

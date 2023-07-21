@@ -109,6 +109,16 @@ if( $custom_padding ) {
                     wp_reset_query();
                 endif;
             ?>
+
+            <?php if ( have_rows('buttons_after_blog_group') && get_field('buttons_after_blog_group')['buttons'] !== false) { ?>
+                
+                <div class="buttons-after-blog">
+                    <?php while (have_rows('buttons_after_blog_group')) {
+                        the_row();
+                        get_template_part('components/buttons');
+                    } ?>
+                </div>
+            <?php } ?>
         </div>
 
     </div>

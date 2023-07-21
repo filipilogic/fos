@@ -17,6 +17,14 @@
         @include mob-only{
             flex-direction: column;
         }
+        .buttons-after-blog {
+          margin-top: 3.6rem;
+          text-align: center;
+          @include tab-max {
+            margin-top: 36px;
+            width: 100%;
+          }
+        }
         article {
             width: 31%;
             background: #FFFFFF;
@@ -33,10 +41,12 @@
                 }
             }
             @include tab-max{
-                margin-bottom: 5rem;
+                &:not(:last-of-type) {
+                    margin-bottom: 5rem;
+                }
             }
             @include limbo-min {
-                &:not(:last-child) {
+                &:not(:last-of-type) {
                     margin-right: 3%;
                 }
             }
