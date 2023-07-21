@@ -13,7 +13,6 @@
     .il_past_events_section_posts{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: stretch;
         @include mob-only{
             flex-direction: column;
@@ -29,9 +28,17 @@
             }
             @include tab-only {
                 width: 47%;
+                &:nth-child(odd) {
+                    margin-right: 6%;
+                }
             }
             @include tab-max{
                 margin-bottom: 5rem;
+            }
+            @include limbo-min {
+                &:not(:last-child) {
+                    margin-right: 3%;
+                }
             }
             .article-container {
                 padding: 24px;

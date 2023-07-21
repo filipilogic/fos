@@ -191,7 +191,8 @@ if ( ! empty( $content_align ) ) {
 	</div>
 
 
-	<?php if ( have_rows('buttons_after_videos_group')) { ?>
+	<?php if ( have_rows('buttons_after_videos_group') && get_field('buttons_after_videos_group')['buttons'] !== false) { ?>
+		
 		<div class="buttons-after-videos">
 			<?php while (have_rows('buttons_after_videos_group')) {
 				the_row();

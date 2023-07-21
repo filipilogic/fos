@@ -162,7 +162,6 @@
         }
         .right {
           order: 2;
-          margin-top: 10px;
         }
       }
     }
@@ -176,7 +175,6 @@
         }
         .right {
           order: 2;
-          margin-top: 10px;
         }
       }
     }
@@ -186,18 +184,12 @@
       > div {
         flex-basis: 100%;
       }
-      .right {
-        margin-bottom: 20px;
-      }
     }
   }
   &.stack-tablet {
     @include limbo-max {
       > div {
         flex-basis: 100%;
-      }
-      .right {
-        margin-bottom: 20px;
       }
     }
   }

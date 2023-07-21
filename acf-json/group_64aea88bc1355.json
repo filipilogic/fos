@@ -208,8 +208,8 @@
             "choices": {
                 "ib-fullwidth": "Fullwidth",
                 "ib-custom-width": "Custom Width",
-                "ib-left": "Info Box Left, Image Right",
-                "ib-right": "Image Left, Info Box Right"
+                "ib-left": "Info Box Left, Video Right",
+                "ib-right": "Video Left, Info Box Right"
             },
             "default_value": "ib-left",
             "return_format": "value",
@@ -822,5 +822,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689965439
+    "modified": 1689968380
 }

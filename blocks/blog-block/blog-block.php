@@ -3,6 +3,8 @@ $margin = get_field_object('margin');
 $custom_padding = get_field('custom_padding');
 $padding = get_field_object('padding');
 
+$picked_category = get_field('pick_a_category_blog_block');
+
 $class = 'il_block il_blog-block-section';
 if ( ! empty( $margin ) ) {
     $class .=  ' ' . $margin['value'];
@@ -71,6 +73,7 @@ if( $custom_padding ) {
                     'post_type' => 'post',
                     'post_status' => 'publish',
                     'posts_per_page' => 3,
+                    'cat' => $picked_category
                 );
                 $posts = new WP_Query( $args );
                 

@@ -50,7 +50,7 @@
   }
   @include tab-max {
     .right {
-      .column {
+      .column:not(:only-child) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -72,10 +72,13 @@
       flex-wrap: wrap;
       .column {
         width: 48%;
-        &:nth-child(1) {
+        &:only-child {
+          text-align: center;
+        }
+        &:not(:only-child):nth-child(1) {
           text-align: right;
         }
-        &:nth-child(2) {
+        &:not(:only-child):nth-child(2) {
           text-align: left;
         }
       }

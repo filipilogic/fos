@@ -8,7 +8,7 @@ $subtitle_custom_color = get_field('subtitle_custom_color');
 $subtitle_font_size_ld = get_field('subtitle_font_size_ld');
 $subtitle_font_size_mt = get_field('subtitle_font_size_mt');
 $subtitle_margin_bottom_ld = get_field('subtitle_margin_bottom_ld');
-$subtitle_margin_bottom_mt = get_field('subtitle_margin_bottom_ld');
+$subtitle_margin_bottom_mt = get_field('subtitle_margin_bottom_mt');
 $class = 'intro_subtitle ' . $subtitle_color . ' ' . $subtitle_font_size . ' ' . $subtitle_font_weight;
 
 $subtitle_style = 'style="';

@@ -168,3 +168,23 @@ function filter_block_categories_when_post_provided( $block_categories, $editor_
 }
 
 add_filter( 'block_categories_all', 'filter_block_categories_when_post_provided', 10, 2 );
+
+function custom_dynamic_category_choices($field) {
+	// Check if the field is the one you want to modify (using the field's name)
+	if ($field['name'] === 'pick_a_category_blog_block') {
+	  // Get the categories from WordPress
+	  $categories = get_categories();
+  
+	  // Prepare choices array based on the retrieved categories
+	  $choices = array();
+	  foreach ($categories as $category) {
+		$choices[$category->term_id] = $category->name;
+	  }
+  
+	  // Update the field choices with the dynamic values
+	  $field['choices'] = $choices;
+	}
+  
+	return $field;
+  }
+  add_filter('acf/load_field', 'custom_dynamic_category_choices');

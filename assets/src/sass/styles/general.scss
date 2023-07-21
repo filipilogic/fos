@@ -105,3 +105,49 @@ h6 {
     margin-right: 15px;
   }
 }
+
+.contact-us-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .contact-us-socials-single {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 10px;
+    }
+    a {
+      color: var(--color-1);
+      font-weight: 400;
+      text-decoration: none;
+      text-align: left;
+    }
+    @include mob-only {
+      margin-top: 15px;
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include tab-min {
+      &:nth-child(1) {
+        width: 46%;
+        justify-content: flex-end;
+      }
+      &:nth-child(2) {
+        width: 52%;
+        justify-content: flex-start;
+      }
+      &:nth-child(3) {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+      }
+    }
+    @include tab-only {
+      &:nth-child(1) {
+        width: 43%;
+      }
+    }
+  }
+}
