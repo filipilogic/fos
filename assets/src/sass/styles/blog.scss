@@ -103,32 +103,148 @@
 /* Archive */
 
 .blog, .archive {
+
     main {
         padding-top: 0rem;
+        .il_blog_archive_header{
+            position: relative;
+            padding: 72px 0;
+            .bg_el_wrapper{
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    position: absolute;
+                    &.bg_mob_element{
+                        display: none;
+                        @include mob-only{
+                            display:inline;
+                        }
+                    }
+                    &.bg_element{
+                        @include mob-only{
+                            display:none;
+                        }
+                    }
+                }
+            }
+            &-inner{
+                background-repeat: no-repeat;
+            }
+            &-title{
+                font-size: 48px;
+                line-height: 48px;
+                @include mob-only{
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+            }
+            &-subtitle{
+                font-size: 24px;
+                line-height: 28px;
+                font-weight: 600;
+                @include mob-only{
+                    font-size: 16px;
+                    line-height: 18px;
+                }
+            }
+        }
+        .il_blog_archive_content{
+            padding-top: 72px;
+            .il_blog_archive_wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                @include mob-only{
+                    flex-direction: column-reverse;
+                }
+                .il_blog_posts_container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    &_wrapper{
+                        max-width: 764px;
+                        @include mob-only{
+                            margin-top: 36px;
+                            max-width: 100%;
+                        }
+                    }
+                   
+                }
+                .il_blog_sidebar{
+                    margin-left: 36px;  
+                    max-width: 264px;
+                    @include mob-only{
+                        max-width: 100%;
+                        margin-left: 0;
+                    }
+                    aside{
+                        box-shadow: 4px 4px 16px 0px #00000029;
+                        border-radius: 0 0 4px 4px;
+                    }
+                    &-category-heading{
+                        background-color: var(--color-2);
+                        border-radius: 4px 4px 0 0;
+                        font-size: 18px;
+                        line-height: 20px;
+                        color:#fff;
+                        padding: 12px 16px;
+                        margin-bottom: 0;
+                        position: relative;
+                        &::after {
+                            @include mob-only{
+                                content: url('../../icons/icon-menu.svg');
+                                position: absolute;
+                                right:16px;
+    
+                            }
+                          }
+                    }  
+                    .wp-block-categories-list{
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        padding:16px 16px 0;
+                        @include mob-only{
+                            display: none;
+                        }
+                        li{
+                            padding-bottom: 16px;
+                            a{
+                                font-size: 14px;
+                                line-height: 16px;
+                                color:var(--color-1);
+                                text-decoration: none;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+
     }
     .il_blog_post {
         display: flex;
         justify-content: space-between;
+        flex-direction: column-reverse;
         margin-bottom: 14rem;
+        box-shadow: 4px 4px 16px 0px #00000029;
+        width: calc(50% - 18px);
+
         .il_bp_title {
             margin-bottom: 2.5rem;
         }
         @include mob-only {
             margin-bottom: var(--b-space-1);
         }
-       @include limbo-min {
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        .il_bp_left {
-            width: 49%;
-        }
-        .il_bp_right {
-            width: 45%;
-        }
-       }
+  
        @include tab-max {
-        flex-direction: column-reverse;
+        flex-direction: column;
         .il_bp_right {
             margin-bottom: 6rem;
         }
@@ -200,5 +316,54 @@
         a {
             font-size: 0;
         }
+    }
+}
+
+.blog{
+    .il_blog_posts_container{
+        .il_blog_post{
+            &:first-child{
+               flex-direction: row;
+               width: 100%;
+               .il_bp_left {
+                    width: 49%;
+                }
+                .il_bp_right {
+                    width: 45%;
+                }
+            }
+            &:nth-child(even) {
+                margin-right: 36px;
+            }
+   
+        }
+    }
+}
+.archive{
+    .il_blog_posts_container{
+        .il_blog_post{
+            &:nth-child(odd) {
+                margin-right: 36px;
+            }
+   
+        }
+    }
+}
+
+.il_archive_more{
+    max-width: 764px;
+    display: flex;
+    flex-wrap: wrap;
+    @include mob-only{
+        margin-top: 36px;
+        max-width: 100%;
+    }
+    .il_blog_post{
+        &:nth-child(odd) {
+            margin-right: 36px;
+        }
+        &:nth-child(even) {
+            margin-right: 0 !important;
+        }   
     }
 }

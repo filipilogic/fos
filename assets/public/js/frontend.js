@@ -21,6 +21,25 @@ jQuery(document).ready(function ($) {
     $(this).parent().toggleClass('sub-menu-open');
     $(this).siblings(".sub-menu").slideToggle();
   });
+
+  // AJAX Load More bttn
+  $(document).on('click', '.ilLoadMore', function (e) {
+    e.preventDefault(); //prevent default action
+    if (!window.countPosts) {
+      window.countPosts = 3;
+    }
+    $.ajax({
+      type: 'GET',
+      url: '/wp-admin/admin-ajax.php',
+      data: {
+        countPosts: window.countPosts,
+        action: 'blog_load_more'
+      }
+    }).done(function (resp) {
+      window.countPosts += 3;
+      $('.il_archive_more').html(resp);
+    });
+  });
 });
 
 /***/ }),
