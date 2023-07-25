@@ -19,21 +19,59 @@ jQuery(document).ready(function ($) {
     // AJAX Load More bttn
     $(document).on('click', '.ilLoadMore', function (e) {
         e.preventDefault() //prevent default action
-        if (!window.countPosts) {
-          window.countPosts = 3
+        
+        const category = $(this).data('category')
+        let postCategory = 'all'
+
+        if (category) {
+          postCategory = category
+          if (!window.countPosts) {
+            window.countPosts = 6
+          }
+        }else{
+          if (!window.countPosts) {
+            window.countPosts = 4
+          }
         }
-  
+
         $.ajax({
           type: 'GET',
           url: '/wp-admin/admin-ajax.php',
           data: {
             countPosts: window.countPosts,
+            postCategory,
             action: 'blog_load_more',
           },
         }).done(function (resp) {
-          window.countPosts += 3
+          if (category) {
+            window.countPosts += 6
+          }else{   
+            window.countPosts += 4           
+          }
+         
           $('.il_archive_more').html(resp)
         })
       })
+
+      // let w_width = $(window).width();
+
+      // // $(window).resize(function() {
+      // //   w_width = $(window).width(); // New width
+      // //  if( w_width < 1199.5){
+      // //   $(document).on('click', '.il_blog_sidebar-category-heading', function (e) {
+      // //     $('.il_blog_sidebar .wp-block-categories-list').toggle(300);
+      // //     $('.il_blog_sidebar-category-heading').toggleClass('active-list');
+      // //   })
+      // //  }
+      // // });
+
+
+      // if( w_width < 1199.5){
+        $(document).on('click', '.il_blog_sidebar-category-heading', function (e) {
+          $('.il_blog_sidebar .wp-block-categories-list').toggle(300);
+          $('.il_blog_sidebar-category-heading').toggleClass('active-list');
+        })
+      //  }
+      
 
 });

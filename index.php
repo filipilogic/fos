@@ -1,17 +1,27 @@
 <?php
 
 get_header();
+$archive_background_class = '';
+$category = false;
 if (is_home()) :
 	$blog_title = get_field('blog_title', 'option');
 	$blog_subtitle = get_field('blog_subtitle', 'option');
 	$image = get_field('blog_background', 'option');
 	$image_mob = get_field('blog_mobile_background', 'option');
+	$archive_background_class = 'il_blog_archive_background';
 endif;
 if(is_category()) :
 	$blog_title = get_field('category_blog_title', 'option');
 	$blog_subtitle = get_field('category_blog_subtitle', 'option');
 	$image = get_field('category_blog_background', 'option');
 	$image_mob = get_field('category_blog_mobile_background', 'option');
+	$archive_background_class = 'il_category_archive_background';
+	$category = get_the_category();
+	
+
+	$current_category = get_category($category[0]->term_id);
+	$count_category_posts = $current_category->category_count;
+
 endif;
 
 $load_more_text = get_field('load_more_button_text', 'option');
@@ -47,7 +57,7 @@ $load_more_background = get_field('load_more_button_background', 'option');
 			</div>
 		</div>
 		
-	    <div class="il_blog_archive_content">
+	    <div class="il_blog_archive_content <?php echo $archive_background_class; ?>">
 			<div class="container">
 				<?php if (is_home()) :?>
 					<h2><?php echo single_post_title(); ?></h2>
@@ -57,14 +67,27 @@ $load_more_background = get_field('load_more_button_background', 'option');
 						<div class="il_blog_posts_container">
 								<?php
 								if ( have_posts() ) :
-
+									$i = 0;
 								/* Start the Loop */
 								while ( have_posts() ) :
-									the_post(); ?>
+									the_post(); 
+									$post_categories = get_the_category();
+									?>
 										<div class="il_blog_post">
 											<div class="il_bp_left">
+												<div class="il_bp_post_date_category_wrapper">
+													<span class="date"><?php echo get_the_date('d M Y'); ?></span>
+													<?php
+													if(count($post_categories)){ ?>
+														<?php
+															foreach($post_categories as $post_category){
+														?>
+															<span class="il_bp_post_category"><?php echo $post_category->name; ?></span>
+													<?php } 
+													}?>
+												</div>
+											
 											<a class="il_bp_title" href="<?php echo get_permalink(get_the_ID()) ?>"><h2 class="tg_title_1 tg_dark"><?php the_title(); ?><?php ?></h2></a>
-												<span class="date"><?php echo get_the_date(); ?></span>
 												<div class="il_bp_text">
 												<?php if (get_the_excerpt()) {
 													echo get_the_excerpt();
@@ -72,23 +95,38 @@ $load_more_background = get_field('load_more_button_background', 'option');
 													echo wp_trim_words(get_the_content(), 25);
 												} ?>
 											</div>
-											<a class="il_btn" href="<?php echo get_permalink(get_the_ID()) ?>"><span class="il_btn_text">Read More</span><span class="il_btn_icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.109" height="29.565" viewBox="0 0 27.109 29.565"><defs><clipPath id="a"><rect width="24.1" height="17.388" fill="#fec000"></rect></clipPath></defs><g transform="translate(12.05 29.565) rotate(-120)" style="isolation:isolate"><g transform="translate(0 0)" style="mix-blend-mode:multiply;isolation:isolate"><g clip-path="url(#a)"><path d="M23.773,11.863H9.918L3.069,0,0,5.316,6.97,17.388h13.94l3.19-5.525h-.326Z" transform="translate(0 0)" fill="#fec000"></path></g></g></g></svg></span></a>
+											<a class="il_bp_link" href="<?php echo get_permalink(get_the_ID()) ?>"><span class="il_bp_link_text">Learn More</span></a>
 											</div>
 											<div class="il_bp_right">
 												<?php the_post_thumbnail(); ?>
 											</div>
 										</div>
-
-								<?php endwhile;
+										
+								<?php $i++; endwhile;
 
 								// the_posts_navigation();
-
+								if($count_category_posts > $i){
+									$show_load_more = true;
+								}else{
+									$show_load_more = false;
+								}
 							endif;
 							?>					
 						</div>
 						<div class="il_archive_more"></div>
 							<?php if ($load_more_text): ?>
-								<button style="<?php echo $load_more_color ? 'color:'.$load_more_color.';' : ''?> <?php echo $load_more_background ? 'background-color:'.$load_more_background.';' : ''?>" class="il_btn ilLoadMore"><?php echo $load_more_text; ?></button>
+								<button <?php echo $category ? 'data-category="'.$category[0]->slug.'"' : ''?> style="<?php echo $load_more_color ? 'color:'.$load_more_color.';' : ''?> <?php echo $load_more_background ? 'background-color:'.$load_more_background.';' : ''?>" class="ilLoadMore">
+									<?php echo $load_more_text; ?>
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8633 8.47029C13.123 8.2106 13.123 7.78956 12.8633 7.52987C12.6038 7.27035 12.183 7.27016 11.9233 7.52945L8.66683 10.7801L8.66683 3.33341C8.66683 2.96522 8.36835 2.66675 8.00016 2.66675C7.63197 2.66675 7.3335 2.96522 7.3335 3.33341L7.3335 10.7801L4.07704 7.52945C3.81728 7.27016 3.39657 7.27035 3.13704 7.52987C2.87735 7.78956 2.87735 8.2106 3.13704 8.47029L8.00016 13.3334L12.8633 8.47029Z" fill="black" fill-opacity="0.7"/>
+										<mask id="mask0_752_874" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="12" height="12">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8633 8.47029C13.123 8.2106 13.123 7.78956 12.8633 7.52987C12.6038 7.27035 12.183 7.27016 11.9233 7.52945L8.66683 10.7801L8.66683 3.33341C8.66683 2.96522 8.36835 2.66675 8.00016 2.66675C7.63197 2.66675 7.3335 2.96522 7.3335 3.33341L7.3335 10.7801L4.07704 7.52945C3.81728 7.27016 3.39657 7.27035 3.13704 7.52987C2.87735 7.78956 2.87735 8.2106 3.13704 8.47029L8.00016 13.3334L12.8633 8.47029Z" fill="white"/>
+										</mask>
+										<g mask="url(#mask0_752_874)">
+										<rect width="16" height="16" fill="white"/>
+										</g>
+									</svg>
+								</button>
 							<?php endif; ?>
 					</div>
 					<div class="il_blog_sidebar">
