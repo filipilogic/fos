@@ -55,25 +55,10 @@ jQuery(document).ready(function ($) {
       $('.il_archive_more').html(resp);
     });
   });
-
-  // let w_width = $(window).width();
-
-  // // $(window).resize(function() {
-  // //   w_width = $(window).width(); // New width
-  // //  if( w_width < 1199.5){
-  // //   $(document).on('click', '.il_blog_sidebar-category-heading', function (e) {
-  // //     $('.il_blog_sidebar .wp-block-categories-list').toggle(300);
-  // //     $('.il_blog_sidebar-category-heading').toggleClass('active-list');
-  // //   })
-  // //  }
-  // // });
-
-  // if( w_width < 1199.5){
   $(document).on('click', '.il_blog_sidebar-category-heading', function (e) {
-    $('.il_blog_sidebar .wp-block-categories-list').toggle(300);
+    $('.wp-block-categories-list').toggle(300);
     $('.il_blog_sidebar-category-heading').toggleClass('active-list');
   });
-  //  }
 });
 
 /***/ }),

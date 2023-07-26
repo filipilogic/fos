@@ -288,9 +288,12 @@ function custom_dynamic_category_choices($field) {
   add_filter('pre_get_posts', 'posts_in_category');
 
 function posts_in_category($query){
-    if ($query->is_category) {
-		$query->set('posts_per_archive_page', 6);
-    }
+	if(is_category()){
+		if ($query->is_category) {
+			$query->set('posts_per_archive_page', 6);
+		}
+	}
+   
 
 }
 
@@ -305,7 +308,7 @@ function the_breadcrumb() {
     if (!is_front_page()) {
 	
 	// Start the breadcrumb with a link to your homepage
-        echo '<div class="breadcrumbs">';
+        echo '<div class="il_sp_breadcrumbs">';
         echo '<a href="';
         echo get_permalink( get_option( 'page_for_posts' ) );
         echo '">';
@@ -315,7 +318,7 @@ function the_breadcrumb() {
 	
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
         if (is_category() || is_single() ){
-			echo 'Category'. $sep;
+			echo '<span>Category</span>'. $sep;
             the_category('title_li=');
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {

@@ -12,13 +12,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-<?php get_template_part('components/title'); ?>
-		<?php get_template_part('components/subtitle'); ?>
-		<?php get_template_part('components/background'); ?>
+<?php //get_template_part('components/title'); ?>
+		<?php //get_template_part('components/subtitle'); ?>
+		<?php //get_template_part('components/background'); ?>
 
 	<div class="entry-content post_container">
-		<h1 class="intro_title title-style-1"><?php the_title(); ?></h1>
-		<span class="date"><?php echo get_the_date(); ?></span>
 		<?php
 		the_content(
 			sprintf(
