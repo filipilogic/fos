@@ -5,6 +5,9 @@
         background-repeat: no-repeat;
         background-position: right top;
         background-size: auto;
+        @include tab-max{
+            background-image: url(../../icons/sp-background-mob.svg);
+        }
     }
     .il_sp_similar_posts{
         padding-bottom: 36px;

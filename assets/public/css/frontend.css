@@ -219,6 +219,11 @@ div.margin-xl {
   background-position: right top;
   background-size: auto;
 }
+@media (max-width: 797.5px) {
+  .single-post .site-main {
+    background-image: url(../../icons/sp-background-mob.svg);
+  }
+}
 .single-post .il_sp_similar_posts {
   padding-bottom: 36px;
 }
