@@ -499,6 +499,11 @@ div.margin-xl {
 .single-post .post_container {
   padding-top: 36px;
 }
+@media (max-width: 797.5px) {
+  .single-post .post_container {
+    padding-top: 0;
+  }
+}
 .single-post .post_container p {
   font-size: 18px;
   line-height: 24px;
