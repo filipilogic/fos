@@ -124,7 +124,7 @@ get_header();
 													<?php if (get_the_excerpt()) {
 														echo get_the_excerpt();
 													} else {
-														echo wp_trim_words(get_the_content(), 25);
+														echo wp_trim_words(get_the_content(), 5);
 													} ?>
 												</div>
 												<a class="il_bp_link" href="<?php echo get_permalink(get_the_ID()) ?>"><span class="il_bp_link_text">Learn More</span></a>
