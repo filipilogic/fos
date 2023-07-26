@@ -250,7 +250,7 @@ div.margin-xl {
   flex-direction: column-reverse;
   margin-bottom: 36px;
   box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1607843137);
-  width: calc(33.33% - 18px);
+  width: 31%;
   border-radius: 4px;
 }
 @media (max-width: 797.5px) {
@@ -270,7 +270,7 @@ div.margin-xl {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  height: 172px;
+  height: 25rem;
   width: 100%;
 }
 .single-post .il_sp_similar_posts .il_blog_post .il_bp_left {

@@ -32,7 +32,7 @@
             flex-direction: column-reverse;
             margin-bottom: 36px;
             box-shadow: 4px 4px 16px 0px #00000029;
-            width: calc(33.33% - 18px);
+            width: 31%;
             border-radius: 4px;
             @include tab-max{
                 width: 100%;
@@ -51,7 +51,7 @@
                     border-radius: 4px 4px 0 0;
                     object-fit: cover;
                     object-position: center;
-                    height: 172px;
+                    height: 25rem;
                     width: 100%;
     
                 }
