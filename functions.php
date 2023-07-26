@@ -374,6 +374,9 @@ $bufferURL = 'https://bufferapp.com/add?url='.$sb_url.'&amp;text='.$sb_title;
 $whatsappURL = 'whatsapp://send?text='.$sb_title . ' ' . $sb_url;
 $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sb_url.'&amp;title='.$sb_title;
 
+$post_title = get_the_title();
+$post_permalink = get_permalink();
+
 		$content .= '<div class="social-box"><div class="social-btn">';
         $content .= '<a class="col-1 sbtn s-facebook" href="'.$facebookURL.'" target="_blank" rel="nofollow"><span>
 		<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -397,7 +400,7 @@ $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sb_url.'&
 		</g>
 		</svg>
 		</span></a>';
-        $content .= '<a class="col-2 sbtn s-googleplus" href="'.$googleURL.'" target="_blank" rel="nofollow"><span><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        $content .= '<a class="col-2 sbtn s-googleplus" href="mailto:?subject='.$post_title.'&body=Check out this post: '.esc_url($post_permalink).'" target="_blank" rel="nofollow"><span><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M19.3833 3.29468H3.3907C1.73952 3.29468 0.402085 4.64203 0.402085 6.29468L0.39209 18.2938C0.39209 19.947 1.73918 21.2947 3.3907 21.2947H19.3833C21.0348 21.2947 22.3819 19.947 22.3819 18.2947V6.29468C22.3819 4.64239 21.0348 3.29468 19.3833 3.29468ZM2.40124 6.29551C2.40124 5.74351 2.84677 5.29468 3.39079 5.29468H19.3834C19.9308 5.29468 20.3829 5.74696 20.3829 6.29468V18.2947C20.3829 18.8424 19.9308 19.2947 19.3834 19.2947H3.39079C2.84332 19.2947 2.39125 18.8424 2.39125 18.2947L2.40124 6.29551ZM4.87399 9.29473C4.4012 9.00972 4.24884 8.39547 4.53366 7.92256C4.81863 7.44937 5.43332 7.29691 5.90639 7.58208L11.3578 10.8682L17.0471 7.43868C17.5202 7.15347 18.1357 7.30722 18.4207 7.78047C18.7049 8.25237 18.5547 8.8665 18.0839 9.15241L11.397 13.2127L11.3908 13.2231L4.87399 9.29473Z" fill="#979797"/>
 		<mask id="mask0_272_11744" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="3" width="23" height="19">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M19.3833 3.29468H3.3907C1.73952 3.29468 0.402085 4.64203 0.402085 6.29468L0.39209 18.2938C0.39209 19.947 1.73918 21.2947 3.3907 21.2947H19.3833C21.0348 21.2947 22.3819 19.947 22.3819 18.2947V6.29468C22.3819 4.64239 21.0348 3.29468 19.3833 3.29468ZM2.40124 6.29551C2.40124 5.74351 2.84677 5.29468 3.39079 5.29468H19.3834C19.9308 5.29468 20.3829 5.74696 20.3829 6.29468V18.2947C20.3829 18.8424 19.9308 19.2947 19.3834 19.2947H3.39079C2.84332 19.2947 2.39125 18.8424 2.39125 18.2947L2.40124 6.29551ZM4.87399 9.29473C4.4012 9.00972 4.24884 8.39547 4.53366 7.92256C4.81863 7.44937 5.43332 7.29691 5.90639 7.58208L11.3578 10.8682L17.0471 7.43868C17.5202 7.15347 18.1357 7.30722 18.4207 7.78047C18.7049 8.25237 18.5547 8.8665 18.0839 9.15241L11.397 13.2127L11.3908 13.2231L4.87399 9.29473Z" fill="white"/>
@@ -407,7 +410,7 @@ $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sb_url.'&
 		</g>
 		</svg>
 		</span></a>';
-        $content .= '<a class="col-2 sbtn s-linkedin" href="'.$linkedInURL.'" target="_blank" rel="nofollow"><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        $content .= '<a class="col-2 sbtn s-linkedin" href="#" target="_blank" rel="nofollow" onclick="copyPostURL(\''.esc_url($post_permalink).'\'); return false;"><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M17.0834 16.3747C16.3237 16.3747 15.644 16.6747 15.1243 17.1447L7.99759 12.9947C8.04757 12.7647 8.08755 12.5347 8.08755 12.2947C8.08755 12.0547 8.04757 11.8247 7.99759 11.5947L15.0443 7.48468C15.5841 7.98468 16.2937 8.29468 17.0834 8.29468C18.7426 8.29468 20.082 6.95468 20.082 5.29468C20.082 3.63468 18.7426 2.29468 17.0834 2.29468C15.4241 2.29468 14.0848 3.63468 14.0848 5.29468C14.0848 5.53468 14.1247 5.76468 14.1747 5.99468L7.12799 10.1047C6.58824 9.60468 5.87857 9.29468 5.08894 9.29468C3.42971 9.29468 2.09033 10.6347 2.09033 12.2947C2.09033 13.9547 3.42971 15.2947 5.08894 15.2947C5.87857 15.2947 6.58824 14.9847 7.12799 14.4847L14.2447 18.6447C14.1947 18.8547 14.1647 19.0747 14.1647 19.2947C14.1647 20.9047 15.4741 22.2147 17.0834 22.2147C18.6926 22.2147 20.002 20.9047 20.002 19.2947C20.002 17.6847 18.6926 16.3747 17.0834 16.3747Z" fill="#505D68"/>
 		<mask id="mask0_272_11758" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="19" height="21">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M17.0834 16.3747C16.3237 16.3747 15.644 16.6747 15.1243 17.1447L7.99759 12.9947C8.04757 12.7647 8.08755 12.5347 8.08755 12.2947C8.08755 12.0547 8.04757 11.8247 7.99759 11.5947L15.0443 7.48468C15.5841 7.98468 16.2937 8.29468 17.0834 8.29468C18.7426 8.29468 20.082 6.95468 20.082 5.29468C20.082 3.63468 18.7426 2.29468 17.0834 2.29468C15.4241 2.29468 14.0848 3.63468 14.0848 5.29468C14.0848 5.53468 14.1247 5.76468 14.1747 5.99468L7.12799 10.1047C6.58824 9.60468 5.87857 9.29468 5.08894 9.29468C3.42971 9.29468 2.09033 10.6347 2.09033 12.2947C2.09033 13.9547 3.42971 15.2947 5.08894 15.2947C5.87857 15.2947 6.58824 14.9847 7.12799 14.4847L14.2447 18.6447C14.1947 18.8547 14.1647 19.0747 14.1647 19.2947C14.1647 20.9047 15.4741 22.2147 17.0834 22.2147C18.6926 22.2147 20.002 20.9047 20.002 19.2947C20.002 17.6847 18.6926 16.3747 17.0834 16.3747Z" fill="white"/>
@@ -418,6 +421,16 @@ $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sb_url.'&
 		</svg>
 		</span></a>';
         $content .= '</div></div>';
+		$content .= '<script>
+		function copyPostURL(url) {
+			const el = document.createElement("textarea");
+			el.value = url;
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand("copy");
+			document.body.removeChild(el);
+		}
+		</script>';
 		return $content;
 }
 
