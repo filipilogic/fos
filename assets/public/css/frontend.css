@@ -218,6 +218,9 @@ div.margin-xl {
     padding-bottom: calc(var(--b-space-3) + var(--b-space-3));
   }
 }
+.single-post a {
+  color: var(--color-1);
+}
 
 .il_blog_hero {
   position: relative;
