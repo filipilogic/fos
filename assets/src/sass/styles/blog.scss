@@ -1,6 +1,11 @@
 /* Single */
 .single-post {
-
+    .site-main{
+        background-image: url(../../icons/sp-background.svg);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: auto;
+    }
     .il_sp_similar_posts{
         padding-bottom: 36px;
         &_content{
@@ -237,6 +242,9 @@
                 }
             }
         }
+        &_featured_image{
+            padding-top: 36px;
+        }
         .il_bp_post_date_category_wrapper{
             .date {
                 font-size: 16px;
@@ -262,6 +270,19 @@
 
    .post_container {
         padding-top: 36px;
+        p{
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 36px;
+        }
+        .wp-block-image{
+            padding-bottom: 36px;
+        }
+        h2{
+            font-size: 36px;
+            line-height: 42px;  
+            color:var(--color-1);
+        }
    }
 
    .post-navigation {

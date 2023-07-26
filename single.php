@@ -47,6 +47,14 @@ get_header();
 							}?>
 						</div>
 						<?php
+							if (has_post_thumbnail()) {
+								?>
+								<div class="il_sp_content_featured_image">
+									<?php the_post_thumbnail(); ?>
+								</div>
+								<?php
+							}
+						
 						get_template_part( 'template-parts/content', get_post_type() ); ?>
 						<div class="post_container nav-container">
 						<?php the_post_navigation(
