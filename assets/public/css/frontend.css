@@ -358,7 +358,7 @@ div.margin-xl {
   }
 }
 .single-post .il_sp_content {
-  max-width: 764px;
+  max-width: calc(100% - 264px - 36px);
 }
 @media (max-width: 1199.5px) {
   .single-post .il_sp_content {
@@ -663,7 +663,7 @@ div.margin-xl {
   justify-content: space-between;
 }
 .blog main .il_blog_archive_content .il_blog_archive_wrapper .il_blog_posts_container_wrapper, .archive main .il_blog_archive_content .il_blog_archive_wrapper .il_blog_posts_container_wrapper {
-  max-width: 764px;
+  max-width: calc(100% - 264px - 36px);
 }
 @media (max-width: 1199.5px) {
   .blog main .il_blog_archive_content .il_blog_archive_wrapper .il_blog_posts_container_wrapper, .archive main .il_blog_archive_content .il_blog_archive_wrapper .il_blog_posts_container_wrapper {
@@ -1270,8 +1270,10 @@ html h3,
 html h4,
 html h5,
 html h6 {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
   line-height: var(--title-line-height);
   margin-bottom: var(--title_margin_bottom_ld);
 }
@@ -2724,7 +2726,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   right: 0;
   left: 0;
   z-index: 20;
-  background: linear-gradient(to top, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.006) 8.1%, hsla(0, 0%, 0%, 0.021) 15.5%, hsla(0, 0%, 0%, 0.046) 22.5%, hsla(0, 0%, 0%, 0.077) 29%, hsla(0, 0%, 0%, 0.114) 35.3%, hsla(0, 0%, 0%, 0.155) 41.2%, hsla(0, 0%, 0%, 0.198) 47.1%, hsla(0, 0%, 0%, 0.242) 52.9%, hsla(0, 0%, 0%, 0.285) 58.8%, hsla(0, 0%, 0%, 0.326) 64.7%, hsla(0, 0%, 0%, 0.363) 71%, hsla(0, 0%, 0%, 0.394) 77.5%, hsla(0, 0%, 0%, 0.419) 84.5%, hsla(0, 0%, 0%, 0.434) 91.9%, hsla(0, 0%, 0%, 0.44) 100%);
+  background: linear-gradient(to top, hsla(0deg, 0%, 0%, 0) 0%, hsla(0deg, 0%, 0%, 0.006) 8.1%, hsla(0deg, 0%, 0%, 0.021) 15.5%, hsla(0deg, 0%, 0%, 0.046) 22.5%, hsla(0deg, 0%, 0%, 0.077) 29%, hsla(0deg, 0%, 0%, 0.114) 35.3%, hsla(0deg, 0%, 0%, 0.155) 41.2%, hsla(0deg, 0%, 0%, 0.198) 47.1%, hsla(0deg, 0%, 0%, 0.242) 52.9%, hsla(0deg, 0%, 0%, 0.285) 58.8%, hsla(0deg, 0%, 0%, 0.326) 64.7%, hsla(0deg, 0%, 0%, 0.363) 71%, hsla(0deg, 0%, 0%, 0.394) 77.5%, hsla(0deg, 0%, 0%, 0.419) 84.5%, hsla(0deg, 0%, 0%, 0.434) 91.9%, hsla(0deg, 0%, 0%, 0.44) 100%);
   padding: 0;
   touch-action: none;
   display: flex;
@@ -2881,7 +2883,7 @@ https://flickity.metafizzy.co
 /* ---- flickity-button ---- */
 .flickity-button {
   position: absolute;
-  background: hsla(0, 0%, 100%, 0.75);
+  background: hsla(0deg, 0%, 100%, 0.75);
   border: none;
   color: #333;
 }
@@ -4136,7 +4138,8 @@ textarea {
   }
 }
 .il_block_intro ul, .il_block_intro ol {
-  padding-inline-start: 28px;
+  -webkit-padding-start: 28px;
+          padding-inline-start: 28px;
 }
 @media (max-width: 1199.5px) {
   .il_block_intro ul li, .il_block_intro ol li {
@@ -5404,6 +5407,8 @@ textarea {
   .si_container .il_slidein.si-5, .si_container .il_slidein.si-5 img {
     border-radius: 0 0 35px 35px;
   }
+}
+@media (max-width: 797.5px) {
   .si_container .mobile_trigger {
     width: 100%;
     padding-top: 25px;
@@ -5430,6 +5435,8 @@ textarea {
   .si_container .mobile_trigger span {
     font-size: 20px;
   }
+}
+@media (max-width: 797.5px) {
   .si_container .si_content {
     width: 100%;
   }
@@ -5444,6 +5451,8 @@ textarea {
     margin-bottom: 1rem;
     margin-left: 1rem;
   }
+}
+@media (max-width: 797.5px) {
   .si_open .il_block_bg {
     transition-delay: 0.4s;
     transition-property: opacity;
