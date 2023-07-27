@@ -919,7 +919,6 @@ div.margin-xl {
 }
 
 .il_archive_more {
-  max-width: 764px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
