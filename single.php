@@ -43,7 +43,7 @@ get_header();
 									foreach($categories as $post_category){
 								?>
 									<span class="il_bp_post_category"><?php echo $post_category->name; ?></span>
-							<?php } 
+							<?php }
 							}?>
 						</div>
 						<?php
@@ -54,8 +54,28 @@ get_header();
 								</div>
 								<?php
 							}
-						
+
 						get_template_part( 'template-parts/content', get_post_type() ); ?>
+						<?php if( get_field('dcta_switch') ) : ?>
+
+						<div class="il_donate_cta">
+							<h2 class="il_dcta_title">
+								<?php the_field('dcta_title', 'option'); ?>
+							</h2>
+							<div class="il_dcta_text">
+								<?php the_field('dcta_text', 'option'); ?>
+							</div>
+							<?php
+							$dcta_link = get_field('dcta_link', 'option');
+							if( $dcta_link ):
+								$dcta_link_url = $dcta_link['url'];
+								$dcta_link_title = $dcta_link['title'];
+								$dcta_link_target = $dcta_link['target'] ? $dcta_link['target'] : '_self';
+								?>
+								<a class="il_btn button-color-green button-hover-color-pink" href="<?php echo esc_url( $dcta_link_url ); ?>" target="<?php echo esc_attr( $dcta_link_target ); ?>"><?php echo esc_html( $dcta_link_title ); ?></a>
+							<?php endif; ?>
+						</div>
+						<?php endif; ?>
 						<div class="post_container nav-container">
 						<?php the_post_navigation(
 							array(
@@ -95,7 +115,7 @@ get_header();
 						// Check if there are any similar posts
 						if ($similar_posts_query->have_posts()) {
 							?>
-							
+
 								<h2 class="il_sp_similar_posts_title">Explore More</h2>
 								<div class="il_sp_similar_posts_content">
 									<?php
@@ -108,7 +128,7 @@ get_header();
 													<span class="date"><?php echo get_the_date('d M Y'); ?></span>
 													<?php
 													if(count($categories)){ ?>
-														
+
 														<?php
 															foreach($categories as $post_category){
 														?>
