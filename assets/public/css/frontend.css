@@ -1519,7 +1519,7 @@ main {
   margin-right: 1.25%;
 }
 
-figure img {
+.column figure img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
