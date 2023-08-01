@@ -30,13 +30,9 @@ jQuery(document).ready(function ($) {
     var postCategory = 'all';
     if (category) {
       postCategory = category;
-      if (!window.countPosts) {
-        window.countPosts = 6;
-      }
-    } else {
-      if (!window.countPosts) {
-        window.countPosts = 4;
-      }
+    }
+    if (!window.countPosts) {
+      window.countPosts = 4;
     }
     $.ajax({
       type: 'GET',
@@ -47,11 +43,7 @@ jQuery(document).ready(function ($) {
         action: 'blog_load_more'
       }
     }).done(function (resp) {
-      if (category) {
-        window.countPosts += 6;
-      } else {
-        window.countPosts += 4;
-      }
+      window.countPosts += 4;
       $('.il_archive_more').html(resp);
     });
   });

@@ -215,7 +215,7 @@ function custom_dynamic_category_choices($field) {
 		$postLimit = intval($countPosts) + 3;
 
 	}else{
-		$countPosts = (isset($_GET['countPosts'])) ? $_GET['countPosts'] : 6;
+		$countPosts = (isset($_GET['countPosts'])) ? $_GET['countPosts'] : 4;
 		
 		$the_query = new WP_Query(array(
 			'orderby' => 'date',
@@ -223,12 +223,12 @@ function custom_dynamic_category_choices($field) {
 			'order'   => 'DESC',
 			'posts_per_page' =>$countPosts ,
 			'post_status'      => 'publish',
-			'offset'          => 6
+			'offset'          => 4
 		  ));
 
 		// $count_posts = wp_count_posts();
 		$count_posts =  $the_query->found_posts;
-		$postLimit = intval($countPosts) + 6;
+		$postLimit = intval($countPosts) + 4;
 	}
 		
 	
@@ -242,24 +242,11 @@ function custom_dynamic_category_choices($field) {
 	if ($the_query->have_posts()) {
 		while ($the_query->have_posts()){
 			$the_query->the_post();
-		  $post_categories = get_the_category();
 		  ?>
 		  	<div class="il_blog_post">
 				<div class="il_bp_left">
 				<div class="il_bp_post_date_category_wrapper">
 					<span class="date"><?php echo get_the_date('d M Y'); ?></span>
-					<?php
-					if(count($post_categories)){ ?>
-						
-						<?php
-							foreach($post_categories as $post_category){
-						?>
-							<span class="il_bp_post_category"><?php echo $post_category->name; ?></span>
-					<?php } ?>
-
-					<?php
-					}
-					?>
 				</div>
 				<a class="il_bp_title" href="<?php echo get_permalink(get_the_ID()) ?>"><h2 class="tg_title_1 tg_dark"><?php the_title(); ?><?php ?></h2></a>
 					<div class="il_bp_text">
@@ -290,7 +277,7 @@ function custom_dynamic_category_choices($field) {
 function posts_in_category($query){
 	if(is_category()){
 		if ($query->is_category) {
-			$query->set('posts_per_archive_page', 6);
+			$query->set('posts_per_archive_page', 4);
 		}
 	}
    
@@ -319,7 +306,7 @@ function the_breadcrumb() {
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
         if (is_category() || is_single() ){
 			echo '<span>Category</span>'. $sep;
-            the_category('title_li=');
+            the_category(', ');
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
                 printf( __( '%s', 'text_domain' ), get_the_date() );
@@ -373,7 +360,7 @@ function il_social_share(){
 	$post_title = get_the_title();
 	$post_permalink = get_permalink();
 
-	$content .= '<div class="social-box"><div class="social-btn">';
+	$content = '<div class="social-box"><div class="social-btn">';
 	$content .= '<a class="col-1 sbtn s-facebook" href="'.$facebookURL.'" target="_blank" rel="nofollow"><span>
 	<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path d="M15.2389 12.3003H13.2774C13.2774 15.4355 13.2774 19.2947 13.2774 19.2947H10.3709C10.3709 19.2947 10.3709 15.4729 10.3709 12.3003H8.98926V9.82822H10.3709V8.22926C10.3709 7.08409 10.9148 5.29468 13.3041 5.29468L15.4579 5.30294V7.70259C15.4579 7.70259 14.1491 7.70259 13.8946 7.70259C13.6402 7.70259 13.2784 7.82989 13.2784 8.37599V9.82871H15.4929L15.2389 12.3003Z" fill="#505D68"/>

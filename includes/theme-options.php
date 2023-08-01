@@ -35,8 +35,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Archive Page Options',
-		'menu_title'	=> 'Archive Page Options',
+		'page_title' 	=> 'Blog Options',
+		'menu_title'	=> 'Blog Options',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 }

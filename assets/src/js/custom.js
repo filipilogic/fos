@@ -25,13 +25,10 @@ jQuery(document).ready(function ($) {
 
         if (category) {
           postCategory = category
-          if (!window.countPosts) {
-            window.countPosts = 6
-          }
-        }else{
-          if (!window.countPosts) {
-            window.countPosts = 4
-          }
+        }
+
+        if (!window.countPosts) {
+          window.countPosts = 4
         }
 
         $.ajax({
@@ -43,11 +40,7 @@ jQuery(document).ready(function ($) {
             action: 'blog_load_more',
           },
         }).done(function (resp) {
-          if (category) {
-            window.countPosts += 6
-          }else{   
-            window.countPosts += 4           
-          }
+          window.countPosts += 4
          
           $('.il_archive_more').html(resp)
         })
