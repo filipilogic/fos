@@ -3279,21 +3279,21 @@ main {
     flex-direction: column;
   }
 }
-.meet-our-donors-hero-btns a:first-child {
+.meet-our-donors-hero-btns a.il_btn:first-of-type {
   display: flex;
   align-items: center;
   padding: 0;
   margin-right: 7rem;
 }
 @media (max-width: 479.5px) {
-  .meet-our-donors-hero-btns a:first-child {
+  .meet-our-donors-hero-btns a.il_btn:first-of-type {
     margin-bottom: 10px;
   }
 }
-.meet-our-donors-hero-btns a:first-child img {
+.meet-our-donors-hero-btns a.il_btn:first-of-type img {
   margin-right: 2.5rem;
 }
-.meet-our-donors-hero-btns a:first-child span {
+.meet-our-donors-hero-btns a.il_btn:first-of-type span {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   padding: 10px 40px 10px 0;
