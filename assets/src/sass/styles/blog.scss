@@ -29,6 +29,12 @@
         @include tab-max{
             background-image: url(../../icons/sp-background-mob.svg);
         }
+        @include sm-desk-only {
+            background-size: 300px auto;
+        }
+        @include md-desk-only {
+            background-size: 300px auto;
+        }
     }
     .il_sp_similar_posts{
         @include desk-min {

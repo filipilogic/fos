@@ -249,6 +249,16 @@ div.margin-xl {
     background-image: url(../../icons/sp-background-mob.svg);
   }
 }
+@media (min-width: 1199.6px) and (max-width: 1360.5px) {
+  .single-post .site-main .post-content {
+    background-size: 300px auto;
+  }
+}
+@media (min-width: 1360.6px) and (max-width: 1659.5px) {
+  .single-post .site-main .post-content {
+    background-size: 300px auto;
+  }
+}
 @media (min-width: 1199.6px) {
   .single-post .il_sp_similar_posts {
     padding-bottom: 36px;
