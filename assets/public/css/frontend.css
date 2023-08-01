@@ -1519,13 +1519,6 @@ main {
   margin-right: 1.25%;
 }
 
-.column figure img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 @media (max-width: 797.5px) {
   .tab-cols-1 .column {
     width: 100%;
@@ -5975,6 +5968,12 @@ textarea {
   justify-content: center;
   width: 25%;
   height: 20rem;
+}
+.il_mini-gallery .il_mini-gallery_inner .column figure img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 797.6px) and (max-width: 1199.5px) {
   .il_mini-gallery .il_mini-gallery_inner .column {

@@ -11,6 +11,11 @@
             align-items: center;
             justify-content: center;
             width: calc(100% / 4);
+            figure img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
             @include limbo-only {
                 width: calc(100% / 3);
             }

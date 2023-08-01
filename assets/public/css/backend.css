@@ -2177,6 +2177,12 @@ div.margin-xl {
   width: 25%;
   height: 20rem;
 }
+.il_mini-gallery .il_mini-gallery_inner .column figure img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 @media (min-width: 797.6px) and (max-width: 1199.5px) {
   .il_mini-gallery .il_mini-gallery_inner .column {
     width: 33.3333333333%;
