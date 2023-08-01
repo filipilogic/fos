@@ -151,3 +151,30 @@ h6 {
     }
   }
 }
+
+.meet-our-donors-hero-btns {
+  display: flex;
+  align-items: center;
+  @include mob-only {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  a:first-child {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 7rem;
+    @include mob-only {
+      margin-bottom: 10px;
+    }
+    img {
+      margin-right: 2.5rem;
+    }
+    span {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      padding: 10px 40px 10px 0;
+      font-weight: bold;
+    }
+  }
+}

@@ -191,7 +191,7 @@ div.margin-xl {
 .il_btn.button-color-pink, .il_btn.button-hover-color-pink:hover {
   background-color: var(--color-3);
 }
-.il_btn:not(:last-child), .il_btn:not(:only-child) {
+.il_btn:not(:last-child), .il_btn:not(:last-child):not(:only-child) {
   margin-right: 3rem;
 }
 
@@ -3267,6 +3267,37 @@ main {
   .contact-us-socials .contact-us-socials-single:nth-child(1) {
     width: 43%;
   }
+}
+
+.meet-our-donors-hero-btns {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 479.5px) {
+  .meet-our-donors-hero-btns {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.meet-our-donors-hero-btns a:first-child {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: 7rem;
+}
+@media (max-width: 479.5px) {
+  .meet-our-donors-hero-btns a:first-child {
+    margin-bottom: 10px;
+  }
+}
+.meet-our-donors-hero-btns a:first-child img {
+  margin-right: 2.5rem;
+}
+.meet-our-donors-hero-btns a:first-child span {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 10px 40px 10px 0;
+  font-weight: bold;
 }
 
 .toplevel_page_theme-general-settings .wp-menu-image {
