@@ -790,6 +790,7 @@ div.margin-xl {
   padding: 16px 24px;
   background: #fff;
   border-radius: 0 0 4px 4px;
+  height: 100%;
 }
 .blog .il_blog_post .il_bp_left .il_bp_title, .archive .il_blog_post .il_bp_left .il_bp_title {
   color: var(--color-1);
@@ -830,7 +831,7 @@ div.margin-xl {
   font-size: 14px;
   line-height: 16px;
   color: var(--color-2);
-  margin-top: 12px;
+  margin-top: auto;
   margin-bottom: 12px;
   text-decoration: none;
   font-weight: 500;
