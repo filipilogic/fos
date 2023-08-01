@@ -781,8 +781,13 @@ div.margin-xl {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  height: 172px;
   width: 100%;
+  height: 172px;
+}
+@media (min-width: 1199.6px) {
+  .blog .il_blog_post .il_bp_right img, .archive .il_blog_post .il_bp_right img {
+    height: 20rem;
+  }
 }
 .blog .il_blog_post .il_bp_left, .archive .il_blog_post .il_bp_left {
   display: flex;
