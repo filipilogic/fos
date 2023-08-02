@@ -636,15 +636,15 @@
                         width: 100%;
                     }
                     h2{
-                        font-size: 36px;
-                        line-height: 42px;
+                        font-size: 3.6rem;
+                        line-height: 1.2;
                         font-weight: 700;
                         @include tab-max{
                             font-size: 24px;
                             line-height: 28px;
                         }
                         @include limbo-min {
-                            margin-bottom: 24px;
+                            margin-bottom: 2.4rem;
                         }
                     }
                     @include limbo-min {
@@ -654,6 +654,7 @@
                     }
                     .il_bp_link{
                         background-color: var(--color-3);
+                        margin-top: 16px;
                         padding: 12px 38px;
                         color:#fff;
                         text-transform: uppercase;

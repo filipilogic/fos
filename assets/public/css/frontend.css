@@ -897,8 +897,8 @@ div.margin-xl {
   }
 }
 .blog .il_blog_posts_container .il_blog_post:first-child .il_bp_left h2 {
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 3.6rem;
+  line-height: 1.2;
   font-weight: 700;
 }
 @media (max-width: 797.5px) {
@@ -909,7 +909,7 @@ div.margin-xl {
 }
 @media (min-width: 797.6px) {
   .blog .il_blog_posts_container .il_blog_post:first-child .il_bp_left h2 {
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
   }
 }
 @media (min-width: 797.6px) {
@@ -919,6 +919,7 @@ div.margin-xl {
 }
 .blog .il_blog_posts_container .il_blog_post:first-child .il_bp_left .il_bp_link {
   background-color: var(--color-3);
+  margin-top: 16px;
   padding: 12px 38px;
   color: #fff;
   text-transform: uppercase;
