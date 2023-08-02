@@ -76,6 +76,7 @@
                 }
             }
             .il_bp_right{
+                line-height: 0;
                 img{
                     border-radius: 4px 4px 0 0;
                     object-fit: cover;
@@ -533,6 +534,7 @@
             }
         }
         .il_bp_right{
+            line-height: 0;
             img{
                 border-radius: 4px 4px 0 0;
                 object-fit: cover;
@@ -660,6 +662,7 @@
                     }
                 }
                 .il_bp_right {
+                    line-height: 0;
                     width: calc(50% - 18px);
                     @include tab-max{
                         width: 100%;
