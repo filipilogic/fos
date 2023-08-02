@@ -89,7 +89,7 @@
             .il_bp_left {
                 display: flex;
                 flex-direction: column;
-                padding: 16px 24px;
+                padding: 22px 24px 16px 24px;
                 background: #fff;
                 border-radius: 0 0 4px 4px;
                 height: 100%;
@@ -549,7 +549,7 @@
         .il_bp_left {
             display: flex;
             flex-direction: column;
-            padding: 16px 24px;
+            padding: 22px 24px 16px 24px;
             background: #fff;
             border-radius: 0 0 4px 4px;
             height: 100%;
@@ -631,6 +631,7 @@
                .il_bp_left {
                     width: calc(50% + 18px);
                     border-radius: 4px 0 0 4px;
+                    padding: 16px 24px;
                     @include tab-max{
                         width: 100%;
                     }

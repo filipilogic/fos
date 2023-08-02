@@ -316,7 +316,7 @@ div.margin-xl {
 .single-post .il_sp_similar_posts .il_blog_post .il_bp_left {
   display: flex;
   flex-direction: column;
-  padding: 16px 24px;
+  padding: 22px 24px 16px 24px;
   background: #fff;
   border-radius: 0 0 4px 4px;
   height: 100%;
@@ -808,7 +808,7 @@ div.margin-xl {
 .blog .il_blog_post .il_bp_left, .archive .il_blog_post .il_bp_left {
   display: flex;
   flex-direction: column;
-  padding: 16px 24px;
+  padding: 22px 24px 16px 24px;
   background: #fff;
   border-radius: 0 0 4px 4px;
   height: 100%;
@@ -889,6 +889,7 @@ div.margin-xl {
 .blog .il_blog_posts_container .il_blog_post:first-child .il_bp_left {
   width: calc(50% + 18px);
   border-radius: 4px 0 0 4px;
+  padding: 16px 24px;
 }
 @media (max-width: 797.5px) {
   .blog .il_blog_posts_container .il_blog_post:first-child .il_bp_left {
