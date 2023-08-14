@@ -43,7 +43,7 @@
       background: #fff;
       border-radius: 8px;
       box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
-      padding: 4.4rem 5.8rem;
+      padding: 4.4rem 10%;
       @include desk-min {
         .il_member_1 {
           grid-column: 1 / 2;
@@ -126,12 +126,18 @@
       .member_position {
         color: var(--color-text);
         font-size: 1.8rem;
+        @include lg-desk-min {
+          margin-bottom: 6.8rem;
+        }
+        @include desk-min {
+          margin-bottom: 5.5rem;
+        }
         @include limbo-max {
           font-size: 16px;
         }
       }
       .il_btn {
-        margin: 6.8rem auto 0 auto;
+        margin: auto auto 0 auto;
         font-size: 14px;
         display: block;
         max-width: 171px;
