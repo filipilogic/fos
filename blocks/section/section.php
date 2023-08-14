@@ -14,8 +14,14 @@ $image_border_bottom_right_radius = get_field('image_border_bottom_right_radius'
 
 $content_align = get_field('content_align');
 
+$inner_section_max_width = get_field('inner_section_max_width');
+
 $class = 'il_block il_section';
 $sec_in_style = 'style="';
+
+if( ! empty($inner_section_max_width) ) {
+	$sec_in_style .= 'max-width: ' . $inner_section_max_width . 'px;';
+}
 
 if ( ! empty( $block['className'] ) ) {
     $class .= ' ' . $block['className'];
@@ -110,17 +116,17 @@ if ( ! empty( $content_align ) ) {
 					$inner_sec_padding_left = get_sub_field('padding_left');
 					$inner_sec_padding_right = get_sub_field('padding_right');
 		
-					if( ! empty($padding_top) ) {
+					if( ! empty($inner_sec_padding_top) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-top-ld: ' . $inner_sec_padding_top . ';';
 					}
-					if( ! empty($padding_bottom) ) {
+					if( ! empty($inner_sec_padding_bottom) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-bottom-ld: ' . $inner_sec_padding_bottom . ';';
 					}
-					if( ! empty($padding_left) ) {
+					if( ! empty($inner_sec_padding_left) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-left-ld: ' . $inner_sec_padding_left . ';';
 					}
 					if( ! empty($padding_right) ) {
-						$inner_sec_paddings .= ' --b-inner-sec-space-right-ld: ' . $inner_sec_padding_right . ';';
+						$inner_sec_padding_right .= ' --b-inner-sec-space-right-ld: ' . $inner_sec_padding_right . ';';
 					}
 				}
 			}
@@ -132,16 +138,16 @@ if ( ! empty( $content_align ) ) {
 					$inner_sec_padding_left = get_sub_field('padding_left');
 					$inner_sec_padding_right = get_sub_field('padding_right');
 		
-					if( ! empty($padding_top) ) {
+					if( ! empty($inner_sec_padding_top) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-top-mt: ' . $inner_sec_padding_top . ';';
 					}
-					if( ! empty($padding_bottom) ) {
+					if( ! empty($inner_sec_padding_bottom) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-bottom-mt: ' . $inner_sec_padding_bottom . ';';
 					}
-					if( ! empty($padding_left) ) {
+					if( ! empty($inner_sec_padding_left) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-left-mt: ' . $inner_sec_padding_left . ';';
 					}
-					if( ! empty($padding_right) ) {
+					if( ! empty($inner_sec_padding_right) ) {
 						$inner_sec_paddings .= ' --b-inner-sec-space-right-mt: ' . $inner_sec_padding_right . ';';
 					}
 				}
@@ -159,7 +165,7 @@ if ( ! empty( $content_align ) ) {
 
 <div class="<?php echo $class; ?>" <?php if ( $custom_padding ) echo 'style="' . $paddings . '"'; ?>>
 <?php get_template_part('components/background'); ?>
-<div class="<?php echo $sec_in_class ?>" <?php if ( ! empty(get_field('inner_section_spacing_group')) ) { echo $sec_in_style . '"'; } ?>>
+<div class="<?php echo $sec_in_class ?>" <?php if ( ! empty(get_field('inner_section_spacing_group')) || ! empty($inner_section_max_width) ) { echo $sec_in_style . '"'; } ?>>
 <!-- Inner Section Background -->
 <?php if ( have_rows('inner_section_background_group')) {
 	while (have_rows('inner_section_background_group')) {

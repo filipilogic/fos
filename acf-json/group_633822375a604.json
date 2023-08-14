@@ -251,6 +251,28 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_64d9f1f881910",
+            "label": "Inner Section Max Width",
+            "name": "inner_section_max_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": "px"
+        },
+        {
             "key": "field_634486f33a083",
             "label": "Stack Columns",
             "name": "stack",
@@ -935,5 +957,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689765464
+    "modified": 1692004921
 }
