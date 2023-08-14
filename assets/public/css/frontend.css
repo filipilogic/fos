@@ -1148,8 +1148,6 @@ div.margin-xl {
 .footer_main {
   padding-top: var(--b-footer-space-top-ld);
   padding-bottom: var(--b-footer-space-bottom-ld);
-  background: url("/wp-content/uploads/2023/07/Bg-3-1.jpg");
-  background-size: cover;
 }
 @media (max-width: 797.5px) {
   .footer_main {
