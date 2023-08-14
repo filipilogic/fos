@@ -6488,6 +6488,7 @@ textarea {
 @media (max-width: 1199.5px) {
   .il_block.team .il_team_row .il_team_member .member_position {
     font-size: 16px;
+    margin-bottom: 6.8rem;
   }
 }
 .il_block.team .il_team_row .il_team_member .il_btn {
