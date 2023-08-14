@@ -192,6 +192,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_64d9fc4249181",
+            "label": "Inner Section Max Width",
+            "name": "inner_section_max_width",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "px"
+        },
+        {
             "key": "field_64aea88bd94d3",
             "label": "Info Box and Media Position",
             "name": "layout",
@@ -590,218 +610,6 @@
             "step": "",
             "prepend": "",
             "append": "px"
-        },
-        {
-            "key": "field_64ba996e7a54a",
-            "label": "Inner Section Borders",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_64ba997e7a54b",
-            "label": "Inner Section Border Top Left Radius",
-            "name": "inner_section_border_top_left_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99837a54c",
-            "label": "Inner Section Border Top Right Radius",
-            "name": "inner_section_border_top_right_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99847a54d",
-            "label": "Inner Section Border Bottom Left Radius",
-            "name": "inner_section_border_bottom_left_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99867a54e",
-            "label": "Inner Section Border Bottom Right Radius",
-            "name": "inner_section_border_bottom_right_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99bb7a54f",
-            "label": "Intro Borders",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_64ba99cb7a550",
-            "label": "Intro Border Top Left Radius",
-            "name": "intro_border_top_left_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99e47a551",
-            "label": "Intro Border Top Right Radius",
-            "name": "intro_border_top_right_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99e57a552",
-            "label": "Intro Border Bottom Left Radius",
-            "name": "intro_border_bottom_left_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
-        },
-        {
-            "key": "field_64ba99e67a553",
-            "label": "Intro Border Bottom Right Radius",
-            "name": "intro_border_bottom_right_radius",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "min": "",
-            "max": "",
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "px"
         }
     ],
     "location": [
@@ -822,5 +630,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689982092
+    "modified": 1692008575
 }

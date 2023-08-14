@@ -14,8 +14,14 @@ $image_border_bottom_right_radius = get_field('image_border_bottom_right_radius'
 $content_custom_width_video_section = get_field('content_custom_width_video_section');
 $content_align = get_field('content_align');
 
+$inner_section_max_width = get_field('inner_section_max_width');
+
 $class = 'il_block il_video-popup-section';
 $sec_in_style = 'style="';
+
+if( ! empty($inner_section_max_width) ) {
+	$sec_in_style .= 'max-width: ' . $inner_section_max_width . 'px;';
+}
 
 if ( ! empty( $content_custom_width_video_section ) ) {
     $sec_in_style .=  '--video-sec-inner-max-width: ' . $content_custom_width_video_section . '%;';
@@ -159,7 +165,7 @@ if ( ! empty( $content_align ) ) {
 
 <div class="<?php echo $class; ?>" <?php if ( $custom_padding ) echo 'style="' . $paddings . '"'; ?>>
 <?php get_template_part('components/background'); ?>
-<div class="<?php echo $sec_in_class ?>" <?php if ( ! empty($content_custom_width_video_section) || ! empty(get_field('inner_section_spacing_group')) ) { echo $sec_in_style . '"'; } ?>>
+<div class="<?php echo $sec_in_class ?>" <?php if ( ! empty($inner_section_max_width) || ! empty($content_custom_width_video_section) || ! empty(get_field('inner_section_spacing_group')) ) { echo $sec_in_style . '"'; } ?>>
 <!-- Inner Section Background -->
 <?php if ( have_rows('inner_section_background_group')) {
 	while (have_rows('inner_section_background_group')) {
