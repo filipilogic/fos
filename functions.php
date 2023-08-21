@@ -206,6 +206,7 @@ function custom_dynamic_category_choices($field) {
 			'orderby' => 'date',
 			'order'   => 'DESC',
 			'posts_per_page' => $countPosts,
+			'post_status'      => 'publish',
 			'offset'          => 3
 		));
 
@@ -221,6 +222,7 @@ function custom_dynamic_category_choices($field) {
 			'category_name' => $postCategory,
 			'order'   => 'DESC',
 			'posts_per_page' => $countPosts,
+			'post_status'      => 'publish',
 			'offset'          => 4
 		  ));
 
