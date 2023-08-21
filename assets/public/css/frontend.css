@@ -1884,7 +1884,7 @@ main {
     transition: var(--theme-transition);
   }
   .header-version-1 .header-main-inner #primary-menu ul.sub-menu li:not(:last-child) a {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   }
   .header-version-1 .header-main-inner #primary-menu > li {
     display: flex;
