@@ -205,8 +205,7 @@ function custom_dynamic_category_choices($field) {
 		$the_query = new WP_Query(array(
 			'orderby' => 'date',
 			'order'   => 'DESC',
-			'posts_per_page' =>$countPosts ,
-			'post_status'      => 'publish',
+			'posts_per_page' => $countPosts,
 			'offset'          => 3
 		));
 
@@ -221,8 +220,7 @@ function custom_dynamic_category_choices($field) {
 			'orderby' => 'date',
 			'category_name' => $postCategory,
 			'order'   => 'DESC',
-			'posts_per_page' =>$countPosts ,
-			'post_status'      => 'publish',
+			'posts_per_page' => $countPosts,
 			'offset'          => 4
 		  ));
 
@@ -230,10 +228,6 @@ function custom_dynamic_category_choices($field) {
 		$count_posts =  $the_query->found_posts;
 		$postLimit = intval($countPosts) + 4;
 	}
-		
-	
-
-
 
 	if($postLimit >= intval($count_posts)){
 	  echo '<style>.ilLoadMore{display:none !important;}</style>';
@@ -280,8 +274,6 @@ function posts_in_category($query){
 			$query->set('posts_per_archive_page', 4);
 		}
 	}
-   
-
 }
 
 

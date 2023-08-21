@@ -424,20 +424,19 @@
             }
 
             .il_blog_archive_wrapper{
-                display: flex;
-                flex-wrap: wrap;
-                @include limbo-max{
-                    flex-direction: column-reverse;
-                }
                 .il_blog_posts_container{
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
+                    width: 75%;
+                    @include limbo-max{
+                        width: 100%;
+                        margin-top: 36px;
+                    }
                     &_wrapper{
-                        max-width: 75%;
+                        display: flex;
                         @include limbo-max{
-                            margin-top: 36px;
-                            max-width: 100%;
+                            flex-direction: column-reverse;
                         }
                     }
 
@@ -621,8 +620,7 @@
 
 .blog{
     .il_blog_posts_container{
-        .il_blog_post{
-            &:first-child{
+        & > div:first-child {
                flex-direction: row;
                width: 100%;
                @include tab-max{
@@ -679,7 +677,6 @@
                         }
                     }
                 }
-            }
 
         }
     }
@@ -719,6 +716,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
     @include mob-only{
         max-width: 100%;
     }

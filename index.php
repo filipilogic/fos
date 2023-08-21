@@ -93,6 +93,7 @@ $load_more_background = get_field('load_more_button_background', 'option');
 								<?php
 								if ( have_posts() ) :
 								/* Start the Loop */
+								$post_count = 0;
 								while ( have_posts() ) :
 									the_post(); 
 									?>
@@ -117,29 +118,38 @@ $load_more_background = get_field('load_more_button_background', 'option');
 											</div>
 										</div>
 										
-								<?php endwhile;
-							endif;
-							?>					
+								<?php 
+									$post_count++;
+									endwhile;
+									
+									// Access and display the found_posts count
+									global $wp_query;
+									$total_posts = $wp_query->found_posts;
+								?>
+								
+								<div class="il_archive_more"></div>
+									<?php if ($total_posts > $post_count && $load_more_text): ?>
+										<button <?php echo $category ? 'data-category="'.$category->slug.'"' : ''?> style="<?php echo $load_more_color ? 'color:'.$load_more_color.';' : ''?> <?php echo $load_more_background ? 'background-color:'.$load_more_background.';' : ''?>" class="ilLoadMore">
+											<?php echo $load_more_text; ?>
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8633 8.47029C13.123 8.2106 13.123 7.78956 12.8633 7.52987C12.6038 7.27035 12.183 7.27016 11.9233 7.52945L8.66683 10.7801L8.66683 3.33341C8.66683 2.96522 8.36835 2.66675 8.00016 2.66675C7.63197 2.66675 7.3335 2.96522 7.3335 3.33341L7.3335 10.7801L4.07704 7.52945C3.81728 7.27016 3.39657 7.27035 3.13704 7.52987C2.87735 7.78956 2.87735 8.2106 3.13704 8.47029L8.00016 13.3334L12.8633 8.47029Z" fill="black" fill-opacity="0.7"/>
+												<mask id="mask0_752_874" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="12" height="12">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8633 8.47029C13.123 8.2106 13.123 7.78956 12.8633 7.52987C12.6038 7.27035 12.183 7.27016 11.9233 7.52945L8.66683 10.7801L8.66683 3.33341C8.66683 2.96522 8.36835 2.66675 8.00016 2.66675C7.63197 2.66675 7.3335 2.96522 7.3335 3.33341L7.3335 10.7801L4.07704 7.52945C3.81728 7.27016 3.39657 7.27035 3.13704 7.52987C2.87735 7.78956 2.87735 8.2106 3.13704 8.47029L8.00016 13.3334L12.8633 8.47029Z" fill="white"/>
+												</mask>
+												<g mask="url(#mask0_752_874)">
+												<rect width="16" height="16" fill="white"/>
+												</g>
+											</svg>
+										</button>
+									<?php endif; ?>
+								</div>
+							<div class="il_blog_sidebar">
+								<?php get_sidebar(); ?>
+							</div>
+								<?php else: ?>
+									<h3 style="color: var(--color-1);">No posts found.</h3>
+								<?php endif; ?>					
 						</div>
-						<div class="il_archive_more"></div>
-							<?php if ($load_more_text): ?>
-								<button <?php echo $category ? 'data-category="'.$category->slug.'"' : ''?> style="<?php echo $load_more_color ? 'color:'.$load_more_color.';' : ''?> <?php echo $load_more_background ? 'background-color:'.$load_more_background.';' : ''?>" class="ilLoadMore">
-									<?php echo $load_more_text; ?>
-									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8633 8.47029C13.123 8.2106 13.123 7.78956 12.8633 7.52987C12.6038 7.27035 12.183 7.27016 11.9233 7.52945L8.66683 10.7801L8.66683 3.33341C8.66683 2.96522 8.36835 2.66675 8.00016 2.66675C7.63197 2.66675 7.3335 2.96522 7.3335 3.33341L7.3335 10.7801L4.07704 7.52945C3.81728 7.27016 3.39657 7.27035 3.13704 7.52987C2.87735 7.78956 2.87735 8.2106 3.13704 8.47029L8.00016 13.3334L12.8633 8.47029Z" fill="black" fill-opacity="0.7"/>
-										<mask id="mask0_752_874" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="2" width="12" height="12">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8633 8.47029C13.123 8.2106 13.123 7.78956 12.8633 7.52987C12.6038 7.27035 12.183 7.27016 11.9233 7.52945L8.66683 10.7801L8.66683 3.33341C8.66683 2.96522 8.36835 2.66675 8.00016 2.66675C7.63197 2.66675 7.3335 2.96522 7.3335 3.33341L7.3335 10.7801L4.07704 7.52945C3.81728 7.27016 3.39657 7.27035 3.13704 7.52987C2.87735 7.78956 2.87735 8.2106 3.13704 8.47029L8.00016 13.3334L12.8633 8.47029Z" fill="white"/>
-										</mask>
-										<g mask="url(#mask0_752_874)">
-										<rect width="16" height="16" fill="white"/>
-										</g>
-									</svg>
-								</button>
-							<?php endif; ?>
-					</div>
-					<div class="il_blog_sidebar">
-						<?php get_sidebar(); ?>
-					</div>
 				</div>
 			</div>
 		</div>
